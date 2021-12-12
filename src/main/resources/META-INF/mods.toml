@@ -1,0 +1,24 @@
+modLoader="javafml"
+loaderVersion="[36,)"
+license="GPL-3.0"
+[[mods]]
+modId="create_sky"
+version="${file.jarVersion}"
+displayName="Create Sky Addition"
+logoFile="create_sky.png"
+credits="Thanks for this example mod goes to Java"
+authors="DancingSnow"
+description='''
+'''
+[[dependencies.create_sky]]
+    modId="forge"
+    mandatory=true
+    versionRange="[36,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.create_sky]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.16.5,1.17)"
+    ordering="NONE"
+    side="BOTH"

@@ -1,0 +1,27 @@
+{
+  "itemGroup.create_sky": "Create Sky",
+
+  "item.create_sky.mechanisms.suggestion": "§7Suggest automated production",
+
+  "item.create_sky.kinetic_mechanism": "Kinetic Mechanism",
+  "item.create_sky.kinetic_mechanism.tooltip": "§6Tier 1",
+  "item.create_sky.incomplete_kinetic_mechanism": "Kinetic Mechanism",
+  "item.create_sky.incomplete_kinetic_mechanism.tooltip": "§6Tier 1",
+  "item.create_sky.sealed_mechanism": "Sealed Mechanism",
+  "item.create_sky.sealed_mechanism.tooltip": "§6Tier 1A",
+  "item.create_sky.infernal_mechanism": "Infernal Mechanism",
+  "item.create_sky.infernal_mechanism.tooltip": "§6Tier 2A",
+  "item.create_sky.incomplete_infernal_mechanism": "Infernal Mechanism",
+  "item.create_sky.incomplete_infernal_mechanism.tooltip": "§6Tier 2A",
+  "item.create_sky.inductive_mechanism": "Inductive Mechanism",
+  "item.create_sky.inductive_mechanism.tooltip": "§6Tier 3",
+  "item.create_sky.incomplete_inductive_mechanism": "Inductive Mechanism",
+  "item.create_sky.incomplete_inductive_mechanism.tooltip": "§6Tier 3",
+  "item.create_sky.abstruse_mechanism": "Abstruse Mechanism",
+  "item.create_sky.abstruse_mechanism.tooltip": "§6Tier 3A",
+  "item.create_sky.calculation_mechanism": "Calculation Mechanism",
+  "item.create_sky.calculation_mechanism.tooltip": "§6Tier 4",
+  "item.create_sky.incomplete_calculation_mechanism": "Calculation Mechanism",
+  "item.create_sky.incomplete_calculation_mechanism.tooltip": "§6Tier 4"
+
+}
