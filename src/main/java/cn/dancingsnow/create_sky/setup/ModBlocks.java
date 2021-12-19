@@ -1,14 +1,28 @@
 package cn.dancingsnow.create_sky.setup;
 
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
+import net.minecraft.block.material.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraftforge.common.ToolType;
 import net.minecraftforge.fml.RegistryObject;
 
 import java.util.function.Supplier;
 
 public class ModBlocks {
     static void register() {}
+
+    public static final RegistryObject<Block> TEST = registry("test_block", () ->
+            new Block(AbstractBlock.Properties.of(Material.STONE).
+                    sound(SoundType.STONE).
+                    harvestLevel(2).
+                    harvestTool(ToolType.PICKAXE).
+                    strength(2, 10).
+                    requiresCorrectToolForDrops()
+            )
+    );
 
     private static <T extends Block> RegistryObject<T> registryNoItem(String name, Supplier<T> block) {
         return Registration.BLOCKS.register(name, block);
