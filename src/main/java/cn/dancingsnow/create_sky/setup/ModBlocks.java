@@ -1,5 +1,6 @@
 package cn.dancingsnow.create_sky.setup;
 
+import com.simibubi.create.content.contraptions.base.CasingBlock;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -15,7 +16,7 @@ public class ModBlocks {
     static void register() {}
 
     public static final RegistryObject<Block> TEST = registry("test_block", () ->
-            new Block(AbstractBlock.Properties.of(Material.STONE).
+            new CasingBlock(AbstractBlock.Properties.of(Material.STONE).
                     sound(SoundType.STONE).
                     harvestLevel(2).
                     harvestTool(ToolType.PICKAXE).
