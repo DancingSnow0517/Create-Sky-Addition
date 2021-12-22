@@ -22,3 +22,9 @@ description='''
     versionRange="[1.16.5,1.17)"
     ordering="NONE"
     side="BOTH"
+[[dependencies.create_sky]]
+    modId="create"
+    mandatory=true
+    versionRange="v0.3.2g"
+    ordering="AFTER"
+    side="BOTH"
