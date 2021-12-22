@@ -1,6 +1,6 @@
 {
 	"credit": "Made with Blockbench",
-	"parent": "kubejs:block/machine",
+	"parent": "create_sky:block/machine",
 	"textures": {
 		"0": "create:block/axis",
 		"3": "create:block/axis_top",
