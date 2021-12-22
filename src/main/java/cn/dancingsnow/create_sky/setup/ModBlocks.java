@@ -22,7 +22,6 @@ public class ModBlocks {
                     .harvestTool(ToolType.PICKAXE)
                     .strength(10)
                     .requiresCorrectToolForDrops()));
-
     public static final RegistryObject<Block> COPPER_MACHINE = registry("copper_machine", () ->
             new Machines(AbstractBlock.Properties.of(Material.HEAVY_METAL)
                     .sound(SoundType.METAL)
@@ -30,11 +29,24 @@ public class ModBlocks {
                     .harvestTool(ToolType.PICKAXE)
                     .strength(10)
                     .requiresCorrectToolForDrops()));
-
     public static final RegistryObject<Block> BRASS_MACHINE = registry("brass_machine", () ->
             new Machines(AbstractBlock.Properties.of(Material.HEAVY_METAL)
                     .sound(SoundType.METAL)
-                    .harvestLevel(2)
+                    .harvestLevel(3)
+                    .harvestTool(ToolType.PICKAXE)
+                    .strength(10)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> ZINC_MACHINE = registry("zinc_machine", () ->
+            new Machines(AbstractBlock.Properties.of(Material.HEAVY_METAL)
+                    .sound(SoundType.METAL)
+                    .harvestLevel(3)
+                    .harvestTool(ToolType.PICKAXE)
+                    .strength(10)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> ENDERIUM_MACHINE = registry("enderium_machine", () ->
+            new Machines(AbstractBlock.Properties.of(Material.HEAVY_METAL)
+                    .sound(SoundType.METAL)
+                    .harvestLevel(4)
                     .harvestTool(ToolType.PICKAXE)
                     .strength(10)
                     .requiresCorrectToolForDrops()));

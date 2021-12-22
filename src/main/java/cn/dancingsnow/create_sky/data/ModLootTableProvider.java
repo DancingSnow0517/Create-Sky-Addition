@@ -42,6 +42,8 @@ public class ModLootTableProvider extends LootTableProvider {
             dropSelf(ModBlocks.ANDESITE_MACHINE.get());
             dropSelf(ModBlocks.COPPER_MACHINE.get());
             dropSelf(ModBlocks.BRASS_MACHINE.get());
+            dropSelf(ModBlocks.ZINC_MACHINE.get());
+            dropSelf(ModBlocks.ENDERIUM_MACHINE.get());
         }
 
         @Override
