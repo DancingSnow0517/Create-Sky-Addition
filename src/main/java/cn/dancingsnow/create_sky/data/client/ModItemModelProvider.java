@@ -1,4 +1,4 @@
-package cn.dancingsnow.create_sky.data;
+package cn.dancingsnow.create_sky.data.client;
 
 import cn.dancingsnow.create_sky.CreateSky;
 import net.minecraft.data.DataGenerator;
@@ -14,6 +14,9 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+
+        withExistingParent("andesite_machine", modLoc("block/andesite_machine"));
+
         ModelFile itemGenerated = getExistingFile(mcLoc("item/generated"));
 
         builder(itemGenerated, "kinetic_mechanism");
