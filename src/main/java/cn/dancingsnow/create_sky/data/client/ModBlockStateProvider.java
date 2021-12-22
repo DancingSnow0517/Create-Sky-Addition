@@ -15,7 +15,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        ModelFile and = models().getExistingFile(modLoc("block/andesite_machine"));
-        simpleBlock(ModBlocks.ANDESITE_MACHINE.get(), and);
+        simpleBlock(ModBlocks.ANDESITE_MACHINE.get(), getModel("andesite_machine"));
+    }
+
+    public ModelFile getModel(String name) {
+        return models().getExistingFile(modLoc("block/" + name));
     }
 }
