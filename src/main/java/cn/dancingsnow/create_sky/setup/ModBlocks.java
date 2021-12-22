@@ -16,16 +16,6 @@ import java.util.function.Supplier;
 public class ModBlocks {
     static void register() {}
 
-    public static final RegistryObject<Block> TEST = registry("test_block", () ->
-            new CasingBlock(AbstractBlock.Properties.of(Material.STONE).
-                    sound(SoundType.STONE).
-                    harvestLevel(2).
-                    harvestTool(ToolType.PICKAXE).
-                    strength(2, 10).
-                    requiresCorrectToolForDrops()
-            )
-    );
-
     public static final RegistryObject<Block> ANDESITE_MACHINE = registry("andesite_machine", () ->
             new Machines(AbstractBlock.Properties.of(Material.HEAVY_METAL)
                     .sound(SoundType.METAL)
