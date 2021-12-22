@@ -40,6 +40,8 @@ public class ModLootTableProvider extends LootTableProvider {
         @Override
         protected void addTables() {
             dropSelf(ModBlocks.ANDESITE_MACHINE.get());
+            dropSelf(ModBlocks.COPPER_MACHINE.get());
+            dropSelf(ModBlocks.BRASS_MACHINE.get());
         }
 
         @Override

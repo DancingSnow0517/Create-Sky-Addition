@@ -1,7 +1,6 @@
 package cn.dancingsnow.create_sky.setup;
 
 import cn.dancingsnow.create_sky.setup.Custom.block.Machines;
-import com.simibubi.create.content.contraptions.base.CasingBlock;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -17,6 +16,22 @@ public class ModBlocks {
     static void register() {}
 
     public static final RegistryObject<Block> ANDESITE_MACHINE = registry("andesite_machine", () ->
+            new Machines(AbstractBlock.Properties.of(Material.HEAVY_METAL)
+                    .sound(SoundType.METAL)
+                    .harvestLevel(1)
+                    .harvestTool(ToolType.PICKAXE)
+                    .strength(10)
+                    .requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> COPPER_MACHINE = registry("copper_machine", () ->
+            new Machines(AbstractBlock.Properties.of(Material.HEAVY_METAL)
+                    .sound(SoundType.METAL)
+                    .harvestLevel(2)
+                    .harvestTool(ToolType.PICKAXE)
+                    .strength(10)
+                    .requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> BRASS_MACHINE = registry("brass_machine", () ->
             new Machines(AbstractBlock.Properties.of(Material.HEAVY_METAL)
                     .sound(SoundType.METAL)
                     .harvestLevel(2)
