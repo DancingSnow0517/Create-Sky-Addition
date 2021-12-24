@@ -2,7 +2,6 @@ package cn.dancingsnow.create_sky.data.client;
 
 import cn.dancingsnow.create_sky.CreateSky;
 import net.minecraft.data.DataGenerator;
-import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -35,9 +34,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         builder(itemGenerated, "incomplete_inductive_mechanism");
         builder(itemGenerated, "incomplete_calculation_mechanism");
 
+        builder(itemGenerated, "calculator");
+        builder(itemGenerated, "charged_calculator");
+
     }
 
-    private ItemModelBuilder builder(ModelFile itemGenerated, String name) {
-        return getBuilder(name).parent(itemGenerated).texture("layer0", "item/" + name);
+    private void builder(ModelFile itemGenerated, String name) {
+        getBuilder(name).parent(itemGenerated).texture("layer0", "item/" + name);
     }
 }

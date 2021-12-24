@@ -22,6 +22,15 @@ public class ModItems {
     public static final RegistryObject<Item> INCOMPLETE_INDUCTIVE_MECHANISM = getMechanismsNotab("incomplete_inductive_mechanism", Boolean.TRUE);
     public static final RegistryObject<Item> INCOMPLETE_CALCULATION_MECHANISM = getMechanismsNotab("incomplete_calculation_mechanism", Boolean.TRUE);
 
+    public static final RegistryObject<Item> CALCULATOR = Registration.ITEMS.register("calculator", () ->
+            new Item(new Item.Properties()
+                    .tab(ModGroups.ADDITIONS)
+                    .stacksTo(1)));
+    public static final RegistryObject<Item> CHARGED_CALCULATOR = Registration.ITEMS.register("charged_calculator", () ->
+            new Item(new Item.Properties()
+                    .tab(ModGroups.ADDITIONS)
+                    .stacksTo(1)));
+
     static void register() {}
 
     public static RegistryObject<Item> getMechanisms(String reg_id, Boolean suggestion){
