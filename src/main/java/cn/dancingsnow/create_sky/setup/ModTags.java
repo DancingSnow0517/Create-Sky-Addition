@@ -1,4 +1,4 @@
-package cn.dancingsnow.create_sky.data;
+package cn.dancingsnow.create_sky.setup;
 
 import cn.dancingsnow.create_sky.CreateSky;
 import net.minecraft.block.Block;
@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class ModTags {
     public static final class Blocks {
 
-        public static final ITag.INamedTag<Block> MECHANISMS = mod("mechanisms");
+        public static final ITag.INamedTag<Block> MACHINE = mod("machine");
 
 
         private static ITag.INamedTag<Block> forge(String path) {
@@ -24,6 +24,9 @@ public class ModTags {
     }
 
     public static final class Items {
+
+        public static final ITag.INamedTag<Item> MECHANISMS = mod("mechanisms");
+        public static final ITag.INamedTag<Item> MACHINE = mod("machine");
 
         private static ITag.INamedTag<Item> forge(String path) {
             return ItemTags.bind(new ResourceLocation("forge", path).toString());
