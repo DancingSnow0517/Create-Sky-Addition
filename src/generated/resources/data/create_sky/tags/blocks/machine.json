@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "create_sky:andesite_machine",
+    "create_sky:copper_machine",
+    "create_sky:brass_machine",
+    "create_sky:zinc_machine",
+    "create_sky:enderium_machine"
+  ]
+}

@@ -27,3 +27,6 @@ d38bbbf3884c027fac6425d551ac23abbfd3cec6 data/create_sky/advancements/recipes/cr
 a5b75ad4ab3db73d3979c7ee15862960cbd197cc data/create_sky/loot_tables/blocks/enderium_machine.json
 9ab6a556a6de52270bcdf8af86c48c116828a6bd data/create_sky/loot_tables/blocks/zinc_machine.json
 47818aeabfb300e69d60cf9df8f4043d1c1377a5 data/create_sky/recipes/andesite_machine.json
+dc3e9a16872b6ff78c3d1a002b3ccd84159b89eb data/create_sky/tags/blocks/machine.json
+dc3e9a16872b6ff78c3d1a002b3ccd84159b89eb data/create_sky/tags/items/machine.json
+fae8ed5fb96804bc6abb5902d2599901f2b63f6d data/create_sky/tags/items/mechanisms.json
