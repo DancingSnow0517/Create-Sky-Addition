@@ -2,6 +2,6 @@
 	"ctm": {
 		"ctm_version": 1,
 		"type": "ctm",
-		"textures": [ "kubejs:block/zinc_casing_ctm" ]
+		"textures": [ "create_sky:block/zinc_casing_ctm" ]
 	}
 }
