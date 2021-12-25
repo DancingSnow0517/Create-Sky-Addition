@@ -4,7 +4,7 @@
   "item.create_sky.mechanisms.suggestion": "§7Suggest automated production",
 
   "item.create_sky.kinetic_mechanism": "Kinetic Mechanism",
-  "item.create_sky.kinetic_mechanism.tooltip": "§6Tier 1",
+  "item.create_sky.kinetic_mechanism.tooltip": "Tier 1",
   "item.create_sky.incomplete_kinetic_mechanism": "Kinetic Mechanism",
   "item.create_sky.incomplete_kinetic_mechanism.tooltip": "§6Tier 1",
   "item.create_sky.sealed_mechanism": "Sealed Mechanism",

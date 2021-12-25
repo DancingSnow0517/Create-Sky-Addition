@@ -44,6 +44,11 @@ public class ModLootTableProvider extends LootTableProvider {
             dropSelf(ModBlocks.BRASS_MACHINE.get());
             dropSelf(ModBlocks.ZINC_MACHINE.get());
             dropSelf(ModBlocks.ENDERIUM_MACHINE.get());
+            dropSelf(ModBlocks.ZINC_CASING.get());
+            dropSelf(ModBlocks.INVAR_CASING.get());
+            dropSelf(ModBlocks.FLUIX_CASING.get());
+            dropSelf(ModBlocks.ENDERIUM_CASING.get());
+
         }
 
         @Override

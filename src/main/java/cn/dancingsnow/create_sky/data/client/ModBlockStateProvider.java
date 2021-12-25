@@ -21,6 +21,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlock(ModBlocks.BRASS_MACHINE.get(), getModel("brass_machine"));
         simpleBlock(ModBlocks.ZINC_MACHINE.get(), getModel("zinc_machine"));
         simpleBlock(ModBlocks.ENDERIUM_MACHINE.get(), getModel("enderium_machine"));
+        simpleBlock(ModBlocks.ZINC_CASING.get());
+        simpleBlock(ModBlocks.INVAR_CASING.get());
+        simpleBlock(ModBlocks.FLUIX_CASING.get());
+        simpleBlock(ModBlocks.ENDERIUM_CASING.get(), getModel("enderium_casing"));
 
     }
 

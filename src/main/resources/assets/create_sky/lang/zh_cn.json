@@ -13,15 +13,15 @@
   "item.create_sky.infernal_mechanism.tooltip": "§6章节 2A",
   "item.create_sky.incomplete_infernal_mechanism": "下届构件",
   "item.create_sky.incomplete_infernal_mechanism.tooltip": "§6章节 2A",
-  "item.create_sky.inductive_mechanism": "§e感应构件",
+  "item.create_sky.inductive_mechanism": "感应构件",
   "item.create_sky.inductive_mechanism.tooltip": "§6章节 3",
-  "item.create_sky.incomplete_inductive_mechanism": "§e感应构件",
+  "item.create_sky.incomplete_inductive_mechanism": "感应构件",
   "item.create_sky.incomplete_inductive_mechanism.tooltip": "§6章节 3",
-  "item.create_sky.abstruse_mechanism": "§b精湛构件",
+  "item.create_sky.abstruse_mechanism": "精湛构件",
   "item.create_sky.abstruse_mechanism.tooltip": "§6章节 3A",
-  "item.create_sky.calculation_mechanism": "§b运算构件",
+  "item.create_sky.calculation_mechanism": "运算构件",
   "item.create_sky.calculation_mechanism.tooltip": "§6章节 4",
-  "item.create_sky.incomplete_calculation_mechanism": "§b运算构件",
+  "item.create_sky.incomplete_calculation_mechanism": "运算构件",
   "item.create_sky.incomplete_calculation_mechanism.tooltip": "§6章节 4"
 
 }

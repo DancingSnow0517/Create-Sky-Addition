@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "top": "create_sky:block/enderium_casing_top",
+    "bottom": "create_sky:block/enderium_casing_top",
+    "side": "create_sky:block/enderium_casing"
+  }
+}

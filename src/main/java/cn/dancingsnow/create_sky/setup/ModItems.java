@@ -2,6 +2,7 @@ package cn.dancingsnow.create_sky.setup;
 
 import cn.dancingsnow.create_sky.CreateSky;
 import cn.dancingsnow.create_sky.setup.Custom.item.Mechanisms;
+import cn.dancingsnow.create_sky.setup.Custom.item.Numbers;
 import net.minecraft.item.Item;
 import net.minecraft.item.Rarity;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -14,9 +15,9 @@ public class ModItems {
     public static final RegistryObject<Item> KINETIC_MECHANISM = getMechanisms("kinetic_mechanism", Boolean.TRUE);
     public static final RegistryObject<Item> SEALED_MECHANISM = getMechanisms("sealed_mechanism", Boolean.FALSE);
     public static final RegistryObject<Item> INFERNAL_MECHANISM = getMechanisms("infernal_mechanism", Boolean.FALSE);
-    public static final RegistryObject<Item> INDUCTIVE_MECHANISM = getMechanisms("inductive_mechanism", Boolean.TRUE);
-    public static final RegistryObject<Item> ABSTRUSE_MECHANISM = getMechanisms("abstruse_mechanism", Boolean.FALSE);
-    public static final RegistryObject<Item> CALCULATION_MECHANISM = getMechanisms("calculation_mechanism", Boolean.TRUE);
+    public static final RegistryObject<Item> INDUCTIVE_MECHANISM = getMechanisms("inductive_mechanism", Boolean.TRUE, Rarity.UNCOMMON);
+    public static final RegistryObject<Item> ABSTRUSE_MECHANISM = getMechanisms("abstruse_mechanism", Boolean.FALSE, Rarity.RARE);
+    public static final RegistryObject<Item> CALCULATION_MECHANISM = getMechanisms("calculation_mechanism", Boolean.TRUE, Rarity.RARE);
 
     public static final RegistryObject<Item> INCOMPLETE_KINETIC_MECHANISM = getMechanismsNotab("incomplete_kinetic_mechanism", Boolean.TRUE);
     public static final RegistryObject<Item> INCOMPLETE_INFERNAL_MECHANISM = getMechanismsNotab("incomplete_infernal_mechanism", Boolean.FALSE);
@@ -56,6 +57,12 @@ public class ModItems {
                 new Mechanisms(new Item.Properties().tab(ModGroups.ADDITIONS), textComponent, suggestion));
     }
 
+    public static RegistryObject<Item> getMechanisms(String reg_id, Boolean suggestion, Rarity rarity){
+        TranslationTextComponent textComponent = new TranslationTextComponent(String.format(TOOLTIPS, reg_id));
+        return Registration.ITEMS.register(reg_id, () ->
+                new Mechanisms(new Item.Properties().tab(ModGroups.ADDITIONS).rarity(rarity), textComponent, suggestion));
+    }
+
     public static RegistryObject<Item> getMechanismsNotab(String reg_id, Boolean suggestion){
         TranslationTextComponent textComponent = new TranslationTextComponent(String.format(TOOLTIPS, reg_id));
         return Registration.ITEMS.register(reg_id, () ->
@@ -64,6 +71,6 @@ public class ModItems {
 
     public static RegistryObject<Item> getNumbers(String reg_id) {
         return Registration.ITEMS.register(reg_id, () ->
-                new Item(new Item.Properties().tab(ModGroups.ADDITIONS).stacksTo(64).rarity(Rarity.COMMON)));
+                new Numbers(new Item.Properties().tab(ModGroups.ADDITIONS).stacksTo(64)));
     }
 }
