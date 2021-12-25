@@ -24,6 +24,20 @@ public class ModItems {
     public static final RegistryObject<Item> INCOMPLETE_CALCULATION_MECHANISM = getMechanismsNotab("incomplete_calculation_mechanism", Boolean.TRUE);
 
     public static final RegistryObject<Item> ZERO = getNumbers("zero");
+    public static final RegistryObject<Item> ONE = getNumbers("one");
+    public static final RegistryObject<Item> TWO = getNumbers("two");
+    public static final RegistryObject<Item> THREE = getNumbers("three");
+    public static final RegistryObject<Item> FOUR = getNumbers("four");
+    public static final RegistryObject<Item> FIVE = getNumbers("five");
+    public static final RegistryObject<Item> SIX = getNumbers("six");
+    public static final RegistryObject<Item> SEVEN = getNumbers("seven");
+    public static final RegistryObject<Item> EIGHT = getNumbers("eight");
+    public static final RegistryObject<Item> NINE = getNumbers("nine");
+    public static final RegistryObject<Item> PLUS = getNumbers("plus");
+    public static final RegistryObject<Item> MINUS = getNumbers("minus");
+    public static final RegistryObject<Item> MULTIPLY = getNumbers("multiply");
+    public static final RegistryObject<Item> DIVIDE = getNumbers("divide");
+    public static final RegistryObject<Item> MISSINGNO = getNumbers("missingno");
 
     public static final RegistryObject<Item> CALCULATOR = Registration.ITEMS.register("calculator", () ->
             new Item(new Item.Properties()

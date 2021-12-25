@@ -28,6 +28,7 @@ public class ModTags {
         public static final ITag.INamedTag<Item> MECHANISMS = mod("mechanisms");
         public static final ITag.INamedTag<Item> MACHINE = mod("machine");
         public static final ITag.INamedTag<Item> NUMBERS = mod("numbers");
+        public static final ITag.INamedTag<Item> INCOMPLETES = mod("incompletes");
 
         private static ITag.INamedTag<Item> forge(String path) {
             return ItemTags.bind(new ResourceLocation("forge", path).toString());

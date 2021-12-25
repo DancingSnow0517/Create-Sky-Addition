@@ -35,6 +35,20 @@ public class ModItemModelProvider extends ItemModelProvider {
         builder(itemGenerated, "incomplete_calculation_mechanism");
 
         builder(itemGenerated, "zero");
+        builder(itemGenerated, "one");
+        builder(itemGenerated, "two");
+        builder(itemGenerated, "three");
+        builder(itemGenerated, "four");
+        builder(itemGenerated, "five");
+        builder(itemGenerated, "six");
+        builder(itemGenerated, "seven");
+        builder(itemGenerated, "eight");
+        builder(itemGenerated, "nine");
+        builder(itemGenerated, "plus");
+        builder(itemGenerated, "minus");
+        builder(itemGenerated, "multiply");
+        builder(itemGenerated, "divide");
+        builder(itemGenerated, "missingno");
 
         builder(itemGenerated, "calculator");
         builder(itemGenerated, "charged_calculator");
