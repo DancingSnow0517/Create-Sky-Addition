@@ -19,6 +19,7 @@ ea1f1adab0379d8fa23344db164c828335aefee2 assets/create_sky/models/item/inductive
 abb63a3e3e6b82a486d3090d78d6ad110948c4bf assets/create_sky/models/item/infernal_mechanism.json
 fe7a6a5c421f26fa2b74e89ee741428f43bc98e1 assets/create_sky/models/item/kinetic_mechanism.json
 db2bb0531dc6ab803b7c46c372326189c2347d3e assets/create_sky/models/item/sealed_mechanism.json
+3797d7284bd03469eec0389c08e586534936fe64 assets/create_sky/models/item/zero.json
 f227c9584982f7d446ec262d92e1be09b6ffcfd2 assets/create_sky/models/item/zinc_machine.json
 d38bbbf3884c027fac6425d551ac23abbfd3cec6 data/create_sky/advancements/recipes/create_sky/andesite_machine.json
 6ed198e1486b752e81b27bc54a33210c0e250bce data/create_sky/loot_tables/blocks/andesite_machine.json
@@ -30,3 +31,4 @@ a5b75ad4ab3db73d3979c7ee15862960cbd197cc data/create_sky/loot_tables/blocks/ende
 dc3e9a16872b6ff78c3d1a002b3ccd84159b89eb data/create_sky/tags/blocks/machine.json
 dc3e9a16872b6ff78c3d1a002b3ccd84159b89eb data/create_sky/tags/items/machine.json
 fae8ed5fb96804bc6abb5902d2599901f2b63f6d data/create_sky/tags/items/mechanisms.json
+518aeaf1d6de3cecce5ed3775125416287eb8ed6 data/create_sky/tags/items/numbers.json

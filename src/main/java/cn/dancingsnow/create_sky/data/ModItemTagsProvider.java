@@ -27,5 +27,6 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         tag(ModTags.Items.MECHANISMS).add(ModItems.ABSTRUSE_MECHANISM.get());
         tag(ModTags.Items.MECHANISMS).add(ModItems.CALCULATION_MECHANISM.get());
 
+        tag(ModTags.Items.NUMBERS).add(ModItems.ZERO.get());
     }
 }

@@ -34,6 +34,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         builder(itemGenerated, "incomplete_inductive_mechanism");
         builder(itemGenerated, "incomplete_calculation_mechanism");
 
+        builder(itemGenerated, "zero");
+
         builder(itemGenerated, "calculator");
         builder(itemGenerated, "charged_calculator");
 
