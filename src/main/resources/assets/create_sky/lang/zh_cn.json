@@ -22,6 +22,31 @@
   "item.create_sky.calculation_mechanism": "运算构件",
   "item.create_sky.calculation_mechanism.tooltip": "§6章节 4",
   "item.create_sky.incomplete_calculation_mechanism": "运算构件",
-  "item.create_sky.incomplete_calculation_mechanism.tooltip": "§6章节 4"
+  "item.create_sky.incomplete_calculation_mechanism.tooltip": "§6章节 4",
 
+  "item.create_sky.zero": "0",
+  "item.create_sky.one": "1",
+  "item.create_sky.twe": "2",
+  "item.create_sky.three": "3",
+  "item.create_sky.four": "4",
+  "item.create_sky.five": "5",
+  "item.create_sky.six": "6",
+  "item.create_sky.seven": "7",
+  "item.create_sky.eight": "8",
+  "item.create_sky.nine": "9",
+  "item.create_sky.plus": "+",
+  "item.create_sky.minus": "+",
+  "item.create_sky.multiply": "+",
+  "item.create_sky.divide": "+",
+  "item.create_sky.missingno": "+",
+
+  "block.create_sky.andesite_machine": "安山岩机械装置",
+  "block.create_sky.copper_machine": "铜制机械装置",
+  "block.create_sky.brass_machine": "黄铜机械装置",
+  "block.create_sky.zinc_machine": "锌制机械装置",
+  "block.create_sky.enderium_machine": "末影机械装置",
+  "block.create_sky.zinc_casing": "锌制框架",
+  "block.create_sky.invar_casing": "殷钢框架",
+  "block.create_sky.fluix_casing": "福鲁伊克斯框架",
+  "block.create_sky.enderium_casing": "末影框架"
 }

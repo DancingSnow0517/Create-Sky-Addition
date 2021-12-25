@@ -22,6 +22,31 @@
   "item.create_sky.calculation_mechanism": "Calculation Mechanism",
   "item.create_sky.calculation_mechanism.tooltip": "§6Tier 4",
   "item.create_sky.incomplete_calculation_mechanism": "Calculation Mechanism",
-  "item.create_sky.incomplete_calculation_mechanism.tooltip": "§6Tier 4"
+  "item.create_sky.incomplete_calculation_mechanism.tooltip": "§6Tier 4",
 
+  "item.create_sky.zero": "0",
+  "item.create_sky.one": "1",
+  "item.create_sky.twe": "2",
+  "item.create_sky.three": "3",
+  "item.create_sky.four": "4",
+  "item.create_sky.five": "5",
+  "item.create_sky.six": "6",
+  "item.create_sky.seven": "7",
+  "item.create_sky.eight": "8",
+  "item.create_sky.nine": "9",
+  "item.create_sky.plus": "+",
+  "item.create_sky.minus": "+",
+  "item.create_sky.multiply": "+",
+  "item.create_sky.divide": "+",
+  "item.create_sky.missingno": "+",
+
+  "block.create_sky.andesite_machine": "Andesite Machine",
+  "block.create_sky.copper_machine": "Copper Machine",
+  "block.create_sky.brass_machine": "Brass Machine",
+  "block.create_sky.zinc_machine": "Zinc Machine",
+  "block.create_sky.enderium_machine": "Enderium Machine",
+  "block.create_sky.zinc_casing": "Zinc Casing",
+  "block.create_sky.invar_casing": "Invar Casing",
+  "block.create_sky.fluix_casing": "Fluix Casing",
+  "block.create_sky.enderium_casing": "Enderium Casing"
 }
