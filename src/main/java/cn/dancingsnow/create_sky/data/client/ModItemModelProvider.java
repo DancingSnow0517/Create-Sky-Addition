@@ -54,8 +54,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         builder(itemGenerated, "divide");
         builder(itemGenerated, "missingno");
 
-        builder(itemGenerated, "calculator");
         builder(itemGenerated, "charged_calculator");
+        builder(itemGenerated, "logic_bucket");
 
     }
 

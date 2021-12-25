@@ -3,6 +3,7 @@ package cn.dancingsnow.create_sky.setup;
 import cn.dancingsnow.create_sky.CreateSky;
 import cn.dancingsnow.create_sky.setup.Custom.item.Mechanisms;
 import cn.dancingsnow.create_sky.setup.Custom.item.Numbers;
+import net.minecraft.item.BucketItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.Rarity;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -40,12 +41,12 @@ public class ModItems {
     public static final RegistryObject<Item> DIVIDE = getNumbers("divide");
     public static final RegistryObject<Item> MISSINGNO = getNumbers("missingno");
 
-    public static final RegistryObject<Item> CALCULATOR = Registration.ITEMS.register("calculator", () ->
+    public static final RegistryObject<Item> CHARGED_CALCULATOR = Registration.ITEMS.register("charged_calculator", () ->
             new Item(new Item.Properties()
                     .tab(ModGroups.ADDITIONS)
                     .stacksTo(1)));
-    public static final RegistryObject<Item> CHARGED_CALCULATOR = Registration.ITEMS.register("charged_calculator", () ->
-            new Item(new Item.Properties()
+    public static final RegistryObject<Item> LOGIC_BUCKET = Registration.ITEMS.register("logic_bucket", () ->
+            new BucketItem(() -> ModFluids.LOGIC_FLUID.get(), new Item.Properties()
                     .tab(ModGroups.ADDITIONS)
                     .stacksTo(1)));
 
