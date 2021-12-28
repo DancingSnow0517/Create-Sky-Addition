@@ -2,6 +2,7 @@ package cn.dancingsnow.create_sky.setup;
 
 import cn.dancingsnow.create_sky.CreateSky;
 import net.minecraft.block.Block;
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -15,6 +16,7 @@ public class Registration {
     public static final DeferredRegister<Block> BLOCKS = create(ForgeRegistries.BLOCKS);
     public static final DeferredRegister<Item> ITEMS = create(ForgeRegistries.ITEMS);
     public static final DeferredRegister<Fluid> FLUIDS = create(ForgeRegistries.FLUIDS);
+    public static final DeferredRegister<Enchantment> ENCHANTMENT = create(ForgeRegistries.ENCHANTMENTS);
 
     public static <T extends IForgeRegistryEntry<T>> DeferredRegister<T> create(IForgeRegistry<T> registry) {
         return DeferredRegister.create(registry, CreateSky.MOD_ID);
@@ -25,6 +27,7 @@ public class Registration {
         BLOCKS.register(modEventBus);
         ITEMS.register(modEventBus);
         FLUIDS.register(modEventBus);
+        ENCHANTMENT.register(modEventBus);
         //CONTAINERS.register(modEventBus);
         //TILE_ENTITIES.register(modEventBus);
         //RECIPE_SERIALIZERS.register(modEventBus);
