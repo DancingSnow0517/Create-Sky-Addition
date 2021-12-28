@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    "create_sky:incomplete_kinetic_mechanism",
-    "create_sky:incomplete_infernal_mechanism",
-    "create_sky:incomplete_inductive_mechanism",
-    "create_sky:incomplete_calculation_mechanism"
-  ]
-}

@@ -16,11 +16,11 @@ public class ModBlockStateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
 
-        simpleBlock(ModBlocks.ANDESITE_MACHINE.get(), getModel("andesite_machine"));
-        simpleBlock(ModBlocks.COPPER_MACHINE.get(), getModel("copper_machine"));
-        simpleBlock(ModBlocks.BRASS_MACHINE.get(), getModel("brass_machine"));
-        simpleBlock(ModBlocks.ZINC_MACHINE.get(), getModel("zinc_machine"));
-        simpleBlock(ModBlocks.ENDERIUM_MACHINE.get(), getModel("enderium_machine"));
+        horizontalBlock(ModBlocks.ANDESITE_MACHINE.get(), getModel("andesite_machine"));
+        horizontalBlock(ModBlocks.COPPER_MACHINE.get(), getModel("copper_machine"));
+        horizontalBlock(ModBlocks.BRASS_MACHINE.get(), getModel("brass_machine"));
+        horizontalBlock(ModBlocks.ZINC_MACHINE.get(), getModel("zinc_machine"));
+        horizontalBlock(ModBlocks.ENDERIUM_MACHINE.get(), getModel("enderium_machine"));
         simpleBlock(ModBlocks.ZINC_CASING.get());
         simpleBlock(ModBlocks.INVAR_CASING.get());
         simpleBlock(ModBlocks.FLUIX_CASING.get());
