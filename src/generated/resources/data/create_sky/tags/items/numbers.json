@@ -1,0 +1,20 @@
+{
+  "replace": false,
+  "values": [
+    "create_sky:zero",
+    "create_sky:one",
+    "create_sky:two",
+    "create_sky:three",
+    "create_sky:four",
+    "create_sky:five",
+    "create_sky:six",
+    "create_sky:seven",
+    "create_sky:eight",
+    "create_sky:nine",
+    "create_sky:plus",
+    "create_sky:minus",
+    "create_sky:multiply",
+    "create_sky:divide",
+    "create_sky:missingno"
+  ]
+}
