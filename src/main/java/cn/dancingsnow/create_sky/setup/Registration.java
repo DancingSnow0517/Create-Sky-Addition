@@ -35,6 +35,7 @@ public class Registration {
         ModBlocks.register();
         ModItems.register();
         ModFluids.register();
+        ModEnchantments.register();
         //ModContainerTypes.register();
         //ModTileEntityTypes.register();
         //ModRecipes.register();

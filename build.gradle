@@ -168,7 +168,7 @@ dependencies {
     implementation fg.deobf("curse.maven:jade-324717:${jade_file}")
     implementation fg.deobf("curse.maven:cofh-core-69162:${cofhcore_file}")
     implementation fg.deobf("curse.maven:thermal-foundation-222880:${thermal_file}")
-    implementation fg.deobf("curse.maven:thermal-ctm-267602:${ctm_file}")
+    implementation fg.deobf("curse.maven:ctm-267602:${ctm_file}")
 
 }
 
