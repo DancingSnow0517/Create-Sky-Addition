@@ -38,6 +38,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         builder(itemGenerated, "incomplete_inductive_mechanism");
         builder(itemGenerated, "incomplete_calculation_mechanism");
 
+        builder(itemGenerated, "ash");
+
         builder(itemGenerated, "zero");
         builder(itemGenerated, "one");
         builder(itemGenerated, "two");

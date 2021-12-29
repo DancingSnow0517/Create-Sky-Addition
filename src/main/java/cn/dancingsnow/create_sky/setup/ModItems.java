@@ -25,6 +25,9 @@ public class ModItems {
     public static final RegistryObject<Item> INCOMPLETE_INDUCTIVE_MECHANISM = getMechanismsNotab("incomplete_inductive_mechanism", Boolean.TRUE);
     public static final RegistryObject<Item> INCOMPLETE_CALCULATION_MECHANISM = getMechanismsNotab("incomplete_calculation_mechanism", Boolean.TRUE);
 
+    public static final RegistryObject<Item> ASH = Registration.ITEMS.register("ash", () ->
+            new Item(new Item.Properties().tab(ModGroups.ADDITIONS)));
+
     public static final RegistryObject<Item> ZERO = getNumbers("zero");
     public static final RegistryObject<Item> ONE = getNumbers("one");
     public static final RegistryObject<Item> TWO = getNumbers("two");
