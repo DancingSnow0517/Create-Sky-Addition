@@ -55,8 +55,8 @@ public class LangMerger implements IDataProvider {
                 return false;
             }
 
-            string = (String)var2.next();
-        } while(!key.startsWith(string));
+            string = (String) var2.next();
+        } while (!key.startsWith(string));
 
         return true;
     }
@@ -69,19 +69,19 @@ public class LangMerger implements IDataProvider {
         Path path = this.gen.getOutputFolder().resolve("assets/create/lang/en_us.json");
         Iterator var3 = this.getAllLocalizationFiles().iterator();
 
-        while(var3.hasNext()) {
-            Pair<String, JsonElement> pair = (Pair)var3.next();
-            if (((JsonElement)pair.getRight()).isJsonObject()) {
+        while (var3.hasNext()) {
+            Pair<String, JsonElement> pair = (Pair) var3.next();
+            if (((JsonElement) pair.getRight()).isJsonObject()) {
                 Map<String, String> localizedEntries = new HashMap();
-                JsonObject jsonobject = ((JsonElement)pair.getRight()).getAsJsonObject();
+                JsonObject jsonobject = ((JsonElement) pair.getRight()).getAsJsonObject();
                 jsonobject.entrySet().stream().forEachOrdered((entry) -> {
-                    String key = (String)entry.getKey();
+                    String key = (String) entry.getKey();
                     if (!key.startsWith("_")) {
-                        String value = ((JsonElement)entry.getValue()).getAsString();
+                        String value = ((JsonElement) entry.getValue()).getAsString();
                         localizedEntries.put(key, value);
                     }
                 });
-                String key = (String)pair.getKey();
+                String key = (String) pair.getKey();
                 this.allLocalizedEntries.put(key, localizedEntries);
                 this.populatedLangData.put(key, new ArrayList());
                 this.missingTranslationTally.put(key, new MutableInt(0));
@@ -94,11 +94,11 @@ public class LangMerger implements IDataProvider {
             this.save(cache, this.mergedLangData, -1, path, "Merging en_us.json with hand-written lang entries...");
             var3 = this.populatedLangData.entrySet().iterator();
 
-            while(var3.hasNext()) {
-                Map.Entry<String, List<Object>> localization = (Map.Entry)var3.next();
-                String key = (String)localization.getKey();
+            while (var3.hasNext()) {
+                Map.Entry<String, List<Object>> localization = (Map.Entry) var3.next();
+                String key = (String) localization.getKey();
                 Path populatedLangPath = this.gen.getOutputFolder().resolve("assets/create/lang/unfinished/" + key);
-                this.save(cache, (List)localization.getValue(), ((MutableInt)this.missingTranslationTally.get(key)).intValue(), populatedLangPath, "Populating " + key + " with missing entries...");
+                this.save(cache, (List) localization.getValue(), ((MutableInt) this.missingTranslationTally.get(key)).intValue(), populatedLangPath, "Populating " + key + " with missing entries...");
             }
 
         }
@@ -145,10 +145,10 @@ public class LangMerger implements IDataProvider {
             MutableObject<String> previousKey;
             previousKey = new MutableObject("");
             jsonobject.entrySet().stream().forEachOrdered((entry) -> {
-                String key = (String)entry.getKey();
+                String key = (String) entry.getKey();
                 if (!this.shouldIgnore(key)) {
-                    String value = ((JsonElement)entry.getValue()).getAsString();
-                    if (!((String)previousKey.getValue()).isEmpty() && this.shouldAddLineBreak(key, (String)previousKey.getValue())) {
+                    String value = ((JsonElement) entry.getValue()).getAsString();
+                    if (!((String) previousKey.getValue()).isEmpty() && this.shouldAddLineBreak(key, (String) previousKey.getValue())) {
                         this.writeData("\n");
                     }
 
@@ -170,9 +170,9 @@ public class LangMerger implements IDataProvider {
     private void writeEntry(String key, String value) {
         this.mergedLangData.add(new cn.dancingsnow.create_sky.data.client.LangMerger.LangEntry(key, value));
         this.populatedLangData.forEach((k, l) -> {
-            cn.dancingsnow.create_sky.data.client.LangMerger.ForeignLangEntry entry = new cn.dancingsnow.create_sky.data.client.LangMerger.ForeignLangEntry(key, value, (Map)this.allLocalizedEntries.get(k));
+            cn.dancingsnow.create_sky.data.client.LangMerger.ForeignLangEntry entry = new cn.dancingsnow.create_sky.data.client.LangMerger.ForeignLangEntry(key, value, (Map) this.allLocalizedEntries.get(k));
             if (entry.isMissing()) {
-                ((MutableInt)this.missingTranslationTally.get(k)).increment();
+                ((MutableInt) this.missingTranslationTally.get(k)).increment();
             }
 
             l.add(entry);
@@ -205,7 +205,7 @@ public class LangMerger implements IDataProvider {
             InputStream resourceAsStream = CreateSky.class.getClassLoader().getResourceAsStream(filepath);
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(resourceAsStream));
 
-            while(true) {
+            while (true) {
                 String readLine = bufferedReader.readLine();
                 if (readLine == null) {
                     resourceAsStream.close();
@@ -227,7 +227,7 @@ public class LangMerger implements IDataProvider {
         AllLangPartials[] var1 = AllLangPartials.values();
         int var2 = var1.length;
 
-        for(int var3 = 0; var3 < var2; ++var3) {
+        for (int var3 = 0; var3 < var2; ++var3) {
             AllLangPartials partial = var1[var3];
             this.addAll(partial.getDisplay(), partial.provide().getAsJsonObject());
         }
@@ -285,7 +285,7 @@ public class LangMerger implements IDataProvider {
         private boolean missing;
 
         ForeignLangEntry(String key, String value, Map<String, String> localizationMap) {
-            super(key, (String)localizationMap.getOrDefault(key, "UNLOCALIZED: " + value));
+            super(key, (String) localizationMap.getOrDefault(key, "UNLOCALIZED: " + value));
             this.missing = !localizationMap.containsKey(key);
         }
 

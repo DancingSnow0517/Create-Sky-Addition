@@ -7,7 +7,8 @@ import net.minecraftforge.fml.RegistryObject;
 
 public class ModEnchantments {
 
-    static void register() {}
+    static void register() {
+    }
 
     public static final RegistryObject<Enchantment> VEIN_UPGRADE = Registration.ENCHANTMENT.register("vein_upgrade", () ->
             new VineUpgrade(Enchantment.Rarity.COMMON, EquipmentSlotType.MAINHAND));

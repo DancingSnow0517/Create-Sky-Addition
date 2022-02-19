@@ -53,21 +53,22 @@ public class ModItems {
                     .tab(ModGroups.ADDITIONS)
                     .stacksTo(1)));
 
-    static void register() {}
+    static void register() {
+    }
 
-    public static RegistryObject<Item> getMechanisms(String reg_id, Boolean suggestion){
+    public static RegistryObject<Item> getMechanisms(String reg_id, Boolean suggestion) {
         TranslationTextComponent textComponent = new TranslationTextComponent(String.format(TOOLTIPS, reg_id));
         return Registration.ITEMS.register(reg_id, () ->
                 new Mechanisms(new Item.Properties().tab(ModGroups.ADDITIONS), textComponent, suggestion));
     }
 
-    public static RegistryObject<Item> getMechanisms(String reg_id, Boolean suggestion, Rarity rarity){
+    public static RegistryObject<Item> getMechanisms(String reg_id, Boolean suggestion, Rarity rarity) {
         TranslationTextComponent textComponent = new TranslationTextComponent(String.format(TOOLTIPS, reg_id));
         return Registration.ITEMS.register(reg_id, () ->
                 new Mechanisms(new Item.Properties().tab(ModGroups.ADDITIONS).rarity(rarity), textComponent, suggestion));
     }
 
-    public static RegistryObject<Item> getMechanismsNotab(String reg_id, Boolean suggestion){
+    public static RegistryObject<Item> getMechanismsNotab(String reg_id, Boolean suggestion) {
         TranslationTextComponent textComponent = new TranslationTextComponent(String.format(TOOLTIPS, reg_id));
         return Registration.ITEMS.register(reg_id, () ->
                 new Mechanisms(new Item.Properties(), textComponent, suggestion));

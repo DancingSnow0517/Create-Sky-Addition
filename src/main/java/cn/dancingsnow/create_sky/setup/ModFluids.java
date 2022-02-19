@@ -12,14 +12,15 @@ import net.minecraftforge.fml.RegistryObject;
 
 public class ModFluids {
 
-    public static void register() {}
+    public static void register() {
+    }
 
     public static final ResourceLocation WATER_STILL_RL = new ResourceLocation("block/water_still");
     public static final ResourceLocation WATER_FLOWING_RL = new ResourceLocation("block/water_flow");
     public static final ResourceLocation WATER_OVERLAY_RL = new ResourceLocation("block/water_overlay");
 
     public static final RegistryObject<FlowingFluid> LOGIC_FLUID = Registration.FLUIDS.register("logic_fluid", () ->
-        new ForgeFlowingFluid.Source(ModFluids.LOGIC_PROPERTIES));
+            new ForgeFlowingFluid.Source(ModFluids.LOGIC_PROPERTIES));
 
     public static final RegistryObject<FlowingFluid> LOGIC_FLOWING = Registration.FLUIDS.register("logic_flowing", () ->
             new ForgeFlowingFluid.Flowing(ModFluids.LOGIC_PROPERTIES));

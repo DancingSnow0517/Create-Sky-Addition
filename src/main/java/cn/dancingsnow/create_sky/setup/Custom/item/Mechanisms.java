@@ -15,6 +15,7 @@ import java.util.List;
 public class Mechanisms extends Item {
     private final TextComponent text;
     private final Boolean suggestion;
+
     public Mechanisms(Properties properties, TranslationTextComponent textComponent, Boolean suggestion) {
         super(properties);
         this.text = textComponent;

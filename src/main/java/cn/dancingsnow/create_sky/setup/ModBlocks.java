@@ -14,7 +14,8 @@ import net.minecraftforge.fml.RegistryObject;
 import java.util.function.Supplier;
 
 public class ModBlocks {
-    static void register() {}
+    static void register() {
+    }
 
     public static final RegistryObject<Block> ANDESITE_MACHINE = registry("andesite_machine", () ->
             new Machines(AbstractBlock.Properties.of(Material.METAL)
@@ -94,7 +95,7 @@ public class ModBlocks {
         return Registration.BLOCKS.register(name, block);
     }
 
-    private static <T extends Block>RegistryObject<T> registry(String name, Supplier<T> block) {
+    private static <T extends Block> RegistryObject<T> registry(String name, Supplier<T> block) {
         RegistryObject<T> ret = registryNoItem(name, block);
         Registration.ITEMS.register(name, () -> new BlockItem(ret.get(), new Item.Properties().tab(ModGroups.ADDITIONS)));
         return ret;

@@ -32,7 +32,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         builder(itemGenerated, "inductive_mechanism");
         builder(itemGenerated, "abstruse_mechanism");
         builder(itemGenerated, "calculation_mechanism");
-        
+
         builder(itemGenerated, "incomplete_kinetic_mechanism");
         builder(itemGenerated, "incomplete_infernal_mechanism");
         builder(itemGenerated, "incomplete_inductive_mechanism");
