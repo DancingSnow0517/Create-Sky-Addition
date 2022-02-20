@@ -57,11 +57,28 @@ public class ModItemModelProvider extends ItemModelProvider {
         builder(itemGenerated, "missingno");
 
         builder(itemGenerated, "charged_calculator");
-        builder(itemGenerated, "logic_bucket");
+
+        bucket_builder(itemGenerated, "logic_bucket");
+        bucket_builder(itemGenerated, "number_0_bucket");
+        bucket_builder(itemGenerated, "number_1_bucket");
+        bucket_builder(itemGenerated, "number_2_bucket");
+        bucket_builder(itemGenerated, "number_3_bucket");
+        bucket_builder(itemGenerated, "number_4_bucket");
+        bucket_builder(itemGenerated, "number_5_bucket");
+        bucket_builder(itemGenerated, "number_6_bucket");
+        bucket_builder(itemGenerated, "number_7_bucket");
+        bucket_builder(itemGenerated, "number_8_bucket");
+        bucket_builder(itemGenerated, "number_9_bucket");
+        bucket_builder(itemGenerated, "matrix_bucket");
 
     }
 
     private void builder(ModelFile itemGenerated, String name) {
         getBuilder(name).parent(itemGenerated).texture("layer0", "item/" + name);
     }
+
+    private void bucket_builder(ModelFile itemGenerated, String name) {
+        getBuilder(name).parent(itemGenerated).texture("layer0", "item/bucket/" + name);
+    }
+
 }

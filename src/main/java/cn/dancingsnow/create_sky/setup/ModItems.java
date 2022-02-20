@@ -8,6 +8,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.Rarity;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraftforge.fml.RegistryObject;
+import net.minecraftforge.fml.common.Mod;
 
 public class ModItems {
 
@@ -50,6 +51,50 @@ public class ModItems {
                     .stacksTo(1)));
     public static final RegistryObject<Item> LOGIC_BUCKET = Registration.ITEMS.register("logic_bucket", () ->
             new BucketItem(() -> ModFluids.LOGIC_FLUID.get(), new Item.Properties()
+                    .tab(ModGroups.ADDITIONS)
+                    .stacksTo(1)));
+    public static final RegistryObject<Item> NUMBER_0_BUCKET = Registration.ITEMS.register("number_0_bucket", () ->
+            new BucketItem(() -> ModFluids.NUMBER_0_FLUID.get(), new Item.Properties()
+                    .tab(ModGroups.ADDITIONS)
+                    .stacksTo(1)));
+    public static final RegistryObject<Item> NUMBER_1_BUCKET = Registration.ITEMS.register("number_1_bucket", () ->
+            new BucketItem(() -> ModFluids.NUMBER_1_FLUID.get(), new Item.Properties()
+                    .tab(ModGroups.ADDITIONS)
+                    .stacksTo(1)));
+    public static final RegistryObject<Item> NUMBER_2_BUCKET = Registration.ITEMS.register("number_2_bucket", () ->
+            new BucketItem(() -> ModFluids.NUMBER_2_FLUID.get(), new Item.Properties()
+                    .tab(ModGroups.ADDITIONS)
+                    .stacksTo(1)));
+    public static final RegistryObject<Item> NUMBER_3_BUCKET = Registration.ITEMS.register("number_3_bucket", () ->
+            new BucketItem(() -> ModFluids.NUMBER_3_FLUID.get(), new Item.Properties()
+                    .tab(ModGroups.ADDITIONS)
+                    .stacksTo(1)));
+    public static final RegistryObject<Item> NUMBER_4_BUCKET = Registration.ITEMS.register("number_4_bucket", () ->
+            new BucketItem(() -> ModFluids.NUMBER_4_FLUID.get(), new Item.Properties()
+                    .tab(ModGroups.ADDITIONS)
+                    .stacksTo(1)));
+    public static final RegistryObject<Item> NUMBER_5_BUCKET = Registration.ITEMS.register("number_5_bucket", () ->
+            new BucketItem(() -> ModFluids.NUMBER_5_FLUID.get(), new Item.Properties()
+                    .tab(ModGroups.ADDITIONS)
+                    .stacksTo(1)));
+    public static final RegistryObject<Item> NUMBER_6_BUCKET = Registration.ITEMS.register("number_6_bucket", () ->
+            new BucketItem(() -> ModFluids.NUMBER_6_FLUID.get(), new Item.Properties()
+                    .tab(ModGroups.ADDITIONS)
+                    .stacksTo(1)));
+    public static final RegistryObject<Item> NUMBER_7_BUCKET = Registration.ITEMS.register("number_7_bucket", () ->
+            new BucketItem(() -> ModFluids.NUMBER_7_FLUID.get(), new Item.Properties()
+                    .tab(ModGroups.ADDITIONS)
+                    .stacksTo(1)));
+    public static final RegistryObject<Item> NUMBER_8_BUCKET = Registration.ITEMS.register("number_8_bucket", () ->
+            new BucketItem(() -> ModFluids.NUMBER_8_FLUID.get(), new Item.Properties()
+                    .tab(ModGroups.ADDITIONS)
+                    .stacksTo(1)));
+    public static final RegistryObject<Item> NUMBER_9_BUCKET = Registration.ITEMS.register("number_9_bucket", () ->
+            new BucketItem(() -> ModFluids.NUMBER_9_FLUID.get(), new Item.Properties()
+                    .tab(ModGroups.ADDITIONS)
+                    .stacksTo(1)));
+    public static final RegistryObject<Item> MATRIX_BUCKET = Registration.ITEMS.register("matrix_bucket", () ->
+            new BucketItem(() -> ModFluids.MATRIX_FLUID.get(), new Item.Properties()
                     .tab(ModGroups.ADDITIONS)
                     .stacksTo(1)));
 

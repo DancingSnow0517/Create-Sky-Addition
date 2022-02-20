@@ -141,9 +141,6 @@ public class LangMerger implements IDataProvider {
                     String key = entry.getKey();
                     if (shouldIgnore(key))
                         return;
-                    if (isInLangPartials(key) )
-                        if (finalHeader.equals("Game Elements"))
-                            return;
                     String value = entry.getValue()
                             .getAsString();
                     if (value.equals("感谢你翻译 Create Sky Addition!"))
