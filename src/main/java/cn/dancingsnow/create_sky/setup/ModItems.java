@@ -11,7 +11,7 @@ import net.minecraftforge.fml.RegistryObject;
 
 public class ModItems {
 
-    private static final String TOOLTIPS = "item." + CreateSky.MOD_ID + ".%s.tooltip";
+    private static final String TOOLTIPS = "item." + CreateSky.MOD_ID + ".tooltip.%s";
 
     public static final RegistryObject<Item> KINETIC_MECHANISM = getMechanisms("kinetic_mechanism", Boolean.TRUE);
     public static final RegistryObject<Item> SEALED_MECHANISM = getMechanisms("sealed_mechanism", Boolean.FALSE);

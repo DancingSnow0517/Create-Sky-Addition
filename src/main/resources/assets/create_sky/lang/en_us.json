@@ -1,28 +1,7 @@
 {
-  "itemGroup.create_sky": "Create Sky",
+  "_": "Missing Localizations: 9",
 
-  "item.create_sky.mechanisms.suggestion": "§7Suggest automated production",
-
-  "item.create_sky.kinetic_mechanism": "Kinetic Mechanism",
-  "item.create_sky.kinetic_mechanism.tooltip": "Tier 1",
-  "item.create_sky.incomplete_kinetic_mechanism": "Kinetic Mechanism",
-  "item.create_sky.incomplete_kinetic_mechanism.tooltip": "§6Tier 1",
-  "item.create_sky.sealed_mechanism": "Sealed Mechanism",
-  "item.create_sky.sealed_mechanism.tooltip": "§6Tier 1A",
-  "item.create_sky.infernal_mechanism": "Infernal Mechanism",
-  "item.create_sky.infernal_mechanism.tooltip": "§6Tier 2A",
-  "item.create_sky.incomplete_infernal_mechanism": "Infernal Mechanism",
-  "item.create_sky.incomplete_infernal_mechanism.tooltip": "§6Tier 2A",
-  "item.create_sky.inductive_mechanism": "Inductive Mechanism",
-  "item.create_sky.inductive_mechanism.tooltip": "§6Tier 3",
-  "item.create_sky.incomplete_inductive_mechanism": "Inductive Mechanism",
-  "item.create_sky.incomplete_inductive_mechanism.tooltip": "§6Tier 3",
-  "item.create_sky.abstruse_mechanism": "Abstruse Mechanism",
-  "item.create_sky.abstruse_mechanism.tooltip": "§6Tier 3A",
-  "item.create_sky.calculation_mechanism": "Calculation Mechanism",
-  "item.create_sky.calculation_mechanism.tooltip": "§6Tier 4",
-  "item.create_sky.incomplete_calculation_mechanism": "Calculation Mechanism",
-  "item.create_sky.incomplete_calculation_mechanism.tooltip": "§6Tier 4",
+  "_": "->------------------------]  Game Elements  [------------------------<-",
 
   "item.create_sky.zero": "0",
   "item.create_sky.one": "1",
@@ -35,10 +14,10 @@
   "item.create_sky.eight": "8",
   "item.create_sky.nine": "9",
   "item.create_sky.plus": "+",
-  "item.create_sky.minus": "+",
-  "item.create_sky.multiply": "+",
-  "item.create_sky.divide": "+",
-  "item.create_sky.missingno": "+",
+  "item.create_sky.minus": "-",
+  "item.create_sky.multiply": "×",
+  "item.create_sky.divide": "÷",
+  "item.create_sky.missingno": "∄",
 
   "block.create_sky.andesite_machine": "Andesite Machine",
   "block.create_sky.copper_machine": "Copper Machine",
@@ -48,5 +27,31 @@
   "block.create_sky.zinc_casing": "Zinc Casing",
   "block.create_sky.invar_casing": "Invar Casing",
   "block.create_sky.fluix_casing": "Fluix Casing",
-  "block.create_sky.enderium_casing": "Enderium Casing"
+  "block.create_sky.enderium_casing": "Enderium Casing",
+
+
+  "_": "->------------------------]  Advancements  [------------------------<-",
+
+
+
+  "_": "->------------------------]  UI & Messages  [------------------------<-",
+
+
+
+  "_": "->------------------------]  Item Descriptions  [------------------------<-",
+
+  "item.create_sky.suggestion.mechanisms": "§7Suggest automated production",
+  "item.create_sky.tooltip.kinetic_mechanism": "§6Tier 1",
+  "item.create_sky.tooltip.incomplete_kinetic_mechanism": "§6Tier 1",
+  "item.create_sky.tooltip.sealed_mechanism": "§6Tier 1A",
+  "item.create_sky.tooltip.infernal_mechanism": "§6Tier 2A",
+  "item.create_sky.tooltip.incomplete_infernal_mechanism": "§6Tier 2A",
+  "item.create_sky.tooltip.inductive_mechanism": "§6Tier 3",
+  "item.create_sky.tooltip.incomplete_inductive_mechanism": "§6Tier 3",
+  "item.create_sky.tooltip.abstruse_mechanism": "§6Tier 3A",
+  "item.create_sky.tooltip.calculation_mechanism": "§6Tier 4",
+  "item.create_sky.tooltip.incomplete_calculation_mechanism": "§6Tier 4",
+
+  "_": "Thank you for translating Create Sky Addition!"
+
 }

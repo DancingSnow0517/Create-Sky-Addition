@@ -1,0 +1,79 @@
+{
+
+	"_": "->------------------------]  Game Elements  [------------------------<-",
+
+	"item.create_sky.zero": "0",
+	"item.create_sky.one": "1",
+	"item.create_sky.twe": "2",
+	"item.create_sky.three": "3",
+	"item.create_sky.four": "4",
+	"item.create_sky.five": "5",
+	"item.create_sky.six": "6",
+	"item.create_sky.seven": "7",
+	"item.create_sky.eight": "8",
+	"item.create_sky.nine": "9",
+	"item.create_sky.plus": "+",
+	"item.create_sky.minus": "-",
+	"item.create_sky.multiply": "×",
+	"item.create_sky.divide": "÷",
+	"item.create_sky.missingno": "∄",
+
+	"item.create_sky.kinetic_mechanism": "动力构件",
+	"item.create_sky.incomplete_kinetic_mechanism": "动力构件（半成品）",
+	"item.create_sky.sealed_mechanism": "密封构件",
+	"item.create_sky.infernal_mechanism": "下届构件",
+	"item.create_sky.incomplete_infernal_mechanism": "下届构件（半成品）",
+	"item.create_sky.inductive_mechanism": "感应构件",
+	"item.create_sky.incomplete_inductive_mechanism": "感应构件（半成品）",
+	"item.create_sky.abstruse_mechanism": "精湛构件",
+	"item.create_sky.calculation_mechanism": "运算构件",
+	"item.create_sky.incomplete_calculation_mechanism": "运算构件（半成品）",
+
+	"block.create_sky.andesite_machine": "安山岩机械装置",
+	"block.create_sky.copper_machine": "铜制机械装置",
+	"block.create_sky.brass_machine": "黄铜机械装置",
+	"block.create_sky.zinc_machine": "锌制机械装置",
+	"block.create_sky.enderium_machine": "末影机械装置",
+	"block.create_sky.zinc_casing": "锌制框架",
+	"block.create_sky.invar_casing": "殷钢框架",
+	"block.create_sky.fluix_casing": "福鲁伊克斯框架",
+	"block.create_sky.enderium_casing": "末影框架",
+
+	"item.create_sky.suggestion.mechanisms": "§7建议自动化生产",
+	"item.create_sky.tooltip.kinetic_mechanism": "§6章节 1",
+	"item.create_sky.tooltip.incomplete_kinetic_mechanism": "§6章节 1",
+	"item.create_sky.tooltip.sealed_mechanism": "§6章节 1A",
+	"item.create_sky.tooltip.infernal_mechanism": "§6章节 2A",
+	"item.create_sky.tooltip.incomplete_infernal_mechanism": "§6章节 2A",
+	"item.create_sky.tooltip.inductive_mechanism": "§6章节 3",
+	"item.create_sky.tooltip.incomplete_inductive_mechanism": "§6章节 3",
+	"item.create_sky.tooltip.abstruse_mechanism": "§6章节 3A",
+	"item.create_sky.tooltip.calculation_mechanism": "§6章节 4",
+	"item.create_sky.tooltip.incomplete_calculation_mechanism": "§6章节 4",
+
+
+	"_": "->------------------------]  Advancements  [------------------------<-",
+
+
+
+	"_": "->------------------------]  UI & Messages  [------------------------<-",
+
+
+
+	"_": "->------------------------]  Item Descriptions  [------------------------<-",
+
+	"item.create_sky.suggestion.mechanisms": "§7建议自动化生产",
+	"item.create_sky.tooltip.kinetic_mechanism": "§6章节 1",
+	"item.create_sky.tooltip.incomplete_kinetic_mechanism": "§6章节 1",
+	"item.create_sky.tooltip.sealed_mechanism": "§6章节 1A",
+	"item.create_sky.tooltip.infernal_mechanism": "§6章节 2A",
+	"item.create_sky.tooltip.incomplete_infernal_mechanism": "§6章节 2A",
+	"item.create_sky.tooltip.inductive_mechanism": "§6章节 3",
+	"item.create_sky.tooltip.incomplete_inductive_mechanism": "§6章节 3",
+	"item.create_sky.tooltip.abstruse_mechanism": "§6章节 3A",
+	"item.create_sky.tooltip.calculation_mechanism": "§6章节 4",
+	"item.create_sky.tooltip.incomplete_calculation_mechanism": "§6章节 4",
+
+	"_": "Thank you for translating Create Sky Addition!"
+
+}

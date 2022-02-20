@@ -45,6 +45,4 @@ public enum AllLangPartials {
             throw new IllegalStateException(String.format("Could not find default lang file: %s", filepath));
         return element;
     }
-
-
 }

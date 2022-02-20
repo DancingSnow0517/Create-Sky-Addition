@@ -16,252 +16,251 @@ import org.apache.commons.lang3.mutable.MutableObject;
 import org.apache.commons.lang3.tuple.Pair;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
-import java.nio.file.LinkOption;
 import java.nio.file.Path;
 import java.util.*;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public class LangMerger implements IDataProvider {
-    private static final Gson GSON = (new GsonBuilder()).setPrettyPrinting().disableHtmlEscaping().create();
+    private static final Gson GSON = (new GsonBuilder()).setPrettyPrinting()
+            .disableHtmlEscaping()
+            .create();
     static final String CATEGORY_HEADER = "\t\"_\": \"->------------------------]  %s  [------------------------<-\",";
+
     private DataGenerator gen;
+
     private List<Object> mergedLangData;
     private Map<String, List<Object>> populatedLangData;
     private Map<String, Map<String, String>> allLocalizedEntries;
     private Map<String, MutableInt> missingTranslationTally;
+    private Map<String, Map<String, String>> allLangPartials;
+
     private List<String> langIgnore;
 
     public LangMerger(DataGenerator gen) {
         this.gen = gen;
-        this.mergedLangData = new ArrayList();
-        this.langIgnore = new ArrayList();
-        this.allLocalizedEntries = new HashMap();
-        this.populatedLangData = new HashMap();
-        this.missingTranslationTally = new HashMap();
-        this.populateLangIgnore();
+        this.mergedLangData = new ArrayList<>();
+        this.langIgnore = new ArrayList<>();
+        this.allLocalizedEntries = new HashMap<>();
+        this.populatedLangData = new HashMap<>();
+        this.missingTranslationTally = new HashMap<>();
+        this.allLangPartials = new HashMap<>();
+        populateLangIgnore();
     }
 
     private void populateLangIgnore() {
-        this.langIgnore.add("create.ponder.debug_");
-        this.langIgnore.add("create.gui.chromatic_projector");
+        // Key prefixes added here will NOT be transferred to lang templates
+        langIgnore.add("create.ponder.debug_"); // Ponder debug scene text
+        langIgnore.add("create.gui.chromatic_projector");
     }
 
     private boolean shouldIgnore(String key) {
-        Iterator var2 = this.langIgnore.iterator();
-
-        String string;
-        do {
-            if (!var2.hasNext()) {
-                return false;
-            }
-
-            string = (String) var2.next();
-        } while (!key.startsWith(string));
-
-        return true;
+        for (String string : langIgnore)
+            if (key.startsWith(string))
+                return true;
+        return false;
     }
 
+    @Override
     public String getName() {
         return "Lang merger";
     }
 
+    @Override
     public void run(DirectoryCache cache) throws IOException {
-        Path path = this.gen.getOutputFolder().resolve("assets/create/lang/en_us.json");
-        Iterator var3 = this.getAllLocalizationFiles().iterator();
+        Path path = this.gen.getOutputFolder()
+                .resolve("assets/" + CreateSky.MOD_ID + "/lang/" + "zh_cn.json");
 
-        while (var3.hasNext()) {
-            Pair<String, JsonElement> pair = (Pair) var3.next();
-            if (((JsonElement) pair.getRight()).isJsonObject()) {
-                Map<String, String> localizedEntries = new HashMap();
-                JsonObject jsonobject = ((JsonElement) pair.getRight()).getAsJsonObject();
-                jsonobject.entrySet().stream().forEachOrdered((entry) -> {
-                    String key = (String) entry.getKey();
-                    if (!key.startsWith("_")) {
-                        String value = ((JsonElement) entry.getValue()).getAsString();
+        for (Pair<String, JsonElement> pair : getAllLocalizationFiles()) {
+            if (!pair.getRight()
+                    .isJsonObject())
+                continue;
+            Map<String, String> localizedEntries = new HashMap<>();
+            JsonObject jsonobject = pair.getRight()
+                    .getAsJsonObject();
+            jsonobject.entrySet()
+                    .stream()
+                    .forEachOrdered(entry -> {
+                        String key = entry.getKey();
+                        if (key.startsWith("_"))
+                            return;
+                        String value = entry.getValue()
+                                .getAsString();
                         localizedEntries.put(key, value);
-                    }
-                });
-                String key = (String) pair.getKey();
-                this.allLocalizedEntries.put(key, localizedEntries);
-                this.populatedLangData.put(key, new ArrayList());
-                this.missingTranslationTally.put(key, new MutableInt(0));
-            }
+                    });
+            String key = pair.getKey();
+            allLocalizedEntries.put(key, localizedEntries);
+            populatedLangData.put(key, new ArrayList<>());
+            missingTranslationTally.put(key, new MutableInt(0));
         }
 
-        this.collectExistingEntries(path);
-        this.collectEntries();
-        if (!this.mergedLangData.isEmpty()) {
-            this.save(cache, this.mergedLangData, -1, path, "Merging en_us.json with hand-written lang entries...");
-            var3 = this.populatedLangData.entrySet().iterator();
+        collectAllPartials();
+        collectExistingEntries(path);
+        collectEntries();
+        if (mergedLangData.isEmpty())
+            return;
 
-            while (var3.hasNext()) {
-                Map.Entry<String, List<Object>> localization = (Map.Entry) var3.next();
-                String key = (String) localization.getKey();
-                Path populatedLangPath = this.gen.getOutputFolder().resolve("assets/create/lang/unfinished/" + key);
-                this.save(cache, (List) localization.getValue(), ((MutableInt) this.missingTranslationTally.get(key)).intValue(), populatedLangPath, "Populating " + key + " with missing entries...");
-            }
-
+        save(cache, mergedLangData, -1, path, "Merging zh_cn.json with hand-written lang entries...");
+        for (Map.Entry<String, List<Object>> localization : populatedLangData.entrySet()) {
+            String key = localization.getKey();
+            Path populatedLangPath = this.gen.getOutputFolder()
+                    .resolve("assets/" + CreateSky.MOD_ID + "/lang/unfinished/" + key);
+            save(cache, localization.getValue(), missingTranslationTally.get(key)
+                    .intValue(), populatedLangPath, "Populating " + key + " with missing entries...");
         }
     }
 
     private void collectExistingEntries(Path path) throws IOException {
-        if (!Files.exists(path, new LinkOption[0])) {
+        if (!Files.exists(path)) {
             CreateSky.LOGGER.warn("Nothing to merge! It appears no lang was generated before me.");
-        } else {
-            BufferedReader reader = Files.newBufferedReader(path);
-            Throwable var3 = null;
+            return;
+        }
 
-            try {
-                JsonObject jsonobject = (JsonObject) JSONUtils.fromJson(GSON, reader, JsonObject.class);
-                this.addAll("Game Elements", jsonobject);
-                reader.close();
-            } catch (Throwable var12) {
-                var3 = var12;
-                throw var12;
-            } finally {
-                if (reader != null) {
-                    if (var3 != null) {
-                        try {
-                            reader.close();
-                        } catch (Throwable var11) {
-                            var3.addSuppressed(var11);
-                        }
-                    } else {
-                        reader.close();
-                    }
-                }
-
-            }
-
+        try (BufferedReader reader = Files.newBufferedReader(path, StandardCharsets.UTF_8)) {
+            JsonObject jsonobject = JSONUtils.fromJson(GSON, reader, JsonObject.class);
+            addAll("Game Elements", jsonobject);
+            reader.close();
         }
     }
 
     protected void addAll(String header, JsonObject jsonobject) {
-        if (jsonobject != null) {
-            header = String.format("\t\"_\": \"->------------------------]  %s  [------------------------<-\",", header);
-            this.writeData("\n");
-            this.writeData(header);
-            this.writeData("\n\n");
-            MutableObject<String> previousKey;
-            previousKey = new MutableObject("");
-            jsonobject.entrySet().stream().forEachOrdered((entry) -> {
-                String key = (String) entry.getKey();
-                if (!this.shouldIgnore(key)) {
-                    String value = ((JsonElement) entry.getValue()).getAsString();
-                    if (!((String) previousKey.getValue()).isEmpty() && this.shouldAddLineBreak(key, (String) previousKey.getValue())) {
-                        this.writeData("\n");
-                    }
+        if (jsonobject == null)
+            return;
+        header = String.format(CATEGORY_HEADER, header);
 
-                    this.writeEntry(key, value);
+        writeData("\n");
+        writeData(header);
+        writeData("\n\n");
+
+        MutableObject<String> previousKey = new MutableObject<>("");
+        String finalHeader = header;
+        jsonobject.entrySet()
+                .stream()
+                .forEachOrdered(entry -> {
+                    String key = entry.getKey();
+                    if (shouldIgnore(key))
+                        return;
+                    if (isInLangPartials(key) & finalHeader.equals("Game Elements"))
+                        return;
+                    String value = entry.getValue()
+                            .getAsString();
+                    if (value.equals("Thank you for translating Create Sky Addition!"))
+                        return;
+                    if (!previousKey.getValue()
+                            .isEmpty() && shouldAddLineBreak(key, previousKey.getValue()))
+                        writeData("\n");
+                    writeEntry(key, value);
                     previousKey.setValue(key);
-                }
-            });
-            this.writeData("\n");
-        }
+                });
+
+        writeData("\n");
     }
 
     private void writeData(String data) {
-        this.mergedLangData.add(data);
-        this.populatedLangData.values().forEach((l) -> {
-            l.add(data);
-        });
+        mergedLangData.add(data);
+        populatedLangData.values()
+                .forEach(l -> l.add(data));
     }
 
     private void writeEntry(String key, String value) {
-        this.mergedLangData.add(new cn.dancingsnow.create_sky.data.client.LangMerger.LangEntry(key, value));
-        this.populatedLangData.forEach((k, l) -> {
-            cn.dancingsnow.create_sky.data.client.LangMerger.ForeignLangEntry entry = new cn.dancingsnow.create_sky.data.client.LangMerger.ForeignLangEntry(key, value, (Map) this.allLocalizedEntries.get(k));
-            if (entry.isMissing()) {
-                ((MutableInt) this.missingTranslationTally.get(k)).increment();
-            }
-
+        mergedLangData.add(new LangEntry(key, value));
+        populatedLangData.forEach((k, l) -> {
+            ForeignLangEntry entry = new ForeignLangEntry(key, value, allLocalizedEntries.get(k));
+            if (entry.isMissing())
+                missingTranslationTally.get(k)
+                        .increment();
             l.add(entry);
         });
     }
 
     protected boolean shouldAddLineBreak(String key, String previousKey) {
-        if (key.endsWith(".tooltip")) {
+        // Always put tooltips and ponder scenes in their own paragraphs
+        if (key.endsWith(".tooltip"))
             return true;
-        } else if (key.startsWith("create.ponder") && key.endsWith("header")) {
-            return true;
-        } else {
-            key = key.replaceFirst("\\.", "");
-            previousKey = previousKey.replaceFirst("\\.", "");
-            String[] split = key.split("\\.");
-            String[] split2 = previousKey.split("\\.");
-            if (split.length != 0 && split2.length != 0) {
-                return !split[0].equals(split2[0]);
-            } else {
-                return false;
-            }
-        }
+
+        key = key.replaceFirst("\\.", "");
+        previousKey = previousKey.replaceFirst("\\.", "");
+
+        String[] split = key.split("\\.");
+        String[] split2 = previousKey.split("\\.");
+        if (split.length == 0 || split2.length == 0)
+            return false;
+
+        // Start new paragraph if keys before second point do not match
+        return !split[0].equals(split2[0]);
     }
 
     private List<Pair<String, JsonElement>> getAllLocalizationFiles() {
-        ArrayList<Pair<String, JsonElement>> list = new ArrayList();
-        String filepath = "assets/create/lang/";
+        ArrayList<Pair<String, JsonElement>> list = new ArrayList<>();
 
+        String filepath = "assets/" + CreateSky.MOD_ID + "/lang/";
         try {
-            InputStream resourceAsStream = CreateSky.class.getClassLoader().getResourceAsStream(filepath);
+            InputStream resourceAsStream = CreateSky.class.getClassLoader()
+                    .getResourceAsStream(filepath);
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(resourceAsStream));
-
             while (true) {
                 String readLine = bufferedReader.readLine();
-                if (readLine == null) {
-                    resourceAsStream.close();
+                if (readLine == null)
                     break;
-                }
-
-                if (readLine.endsWith(".json") && !readLine.startsWith("en_us") && !readLine.startsWith("en_ud")) {
-                    list.add(Pair.of(readLine, FilesHelper.loadJsonResource(filepath + "/" + readLine)));
-                }
+                if (!readLine.endsWith(".json"))
+                    continue;
+                if (readLine.startsWith("zh_cn") || readLine.startsWith("en_ud"))
+                    continue;
+                list.add(Pair.of(readLine, FilesHelper.loadJsonResource(filepath + "/" + readLine)));
             }
-        } catch (IOException var6) {
-            var6.printStackTrace();
+            resourceAsStream.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
         return list;
     }
 
     private void collectEntries() {
-        AllLangPartials[] var1 = AllLangPartials.values();
-        int var2 = var1.length;
-
-        for (int var3 = 0; var3 < var2; ++var3) {
-            AllLangPartials partial = var1[var3];
-            this.addAll(partial.getDisplay(), partial.provide().getAsJsonObject());
-        }
+        for (AllLangPartials partial : AllLangPartials.values())
+            addAll(partial.getDisplay(), partial.provide()
+                    .getAsJsonObject());
 
     }
 
-    private void save(DirectoryCache cache, List<Object> dataIn, int missingKeys, Path target, String message) throws IOException {
-        String data = this.createString(dataIn, missingKeys);
-        String hash = IDataProvider.SHA1.hashUnencodedChars(data).toString();
-        if (!Objects.equals(cache.getHash(target), hash) || !Files.exists(target, new LinkOption[0])) {
-            Files.createDirectories(target.getParent());
-            BufferedWriter bufferedwriter = Files.newBufferedWriter(target);
-            Throwable var9 = null;
+    private void collectAllPartials() {
+        JsonObject jsonObject;
+        for (AllLangPartials partial : AllLangPartials.values()) {
+            Map<String, String> map = new HashMap<>();
+            jsonObject = partial.provide().getAsJsonObject();
+            jsonObject.entrySet().stream().forEachOrdered(entry -> {
+                String key = entry.getKey();
+                String value = entry.getValue().getAsString();
+                map.put(key, value);
+            });
+            allLangPartials.put(partial.getDisplay(), map);
+        }
+    }
 
-            try {
+    private boolean isInLangPartials(String key){
+        AtomicBoolean rt = new AtomicBoolean(false);
+        allLangPartials.forEach((s, stringStringMap) -> {
+            if (stringStringMap.containsKey(key))
+                rt.set(true);
+        });
+        return rt.get();
+    }
+
+    private void save(DirectoryCache cache, List<Object> dataIn, int missingKeys, Path target, String message)
+            throws IOException {
+        String data = createString(dataIn, missingKeys);
+//		data = JavaUnicodeEscaper.outsideOf(0, 0x7f)
+//			.translate(data);
+        String hash = IDataProvider.SHA1.hashUnencodedChars(data)
+                .toString();
+        if (!Objects.equals(cache.getHash(target), hash) || !Files.exists(target)) {
+            Files.createDirectories(target.getParent());
+
+            try (BufferedWriter bufferedwriter = Files.newBufferedWriter(target, StandardCharsets.UTF_8)) {
                 CreateSky.LOGGER.info(message);
                 bufferedwriter.write(data);
                 bufferedwriter.close();
-            } catch (Throwable var18) {
-                var9 = var18;
-                throw var18;
-            } finally {
-                if (bufferedwriter != null) {
-                    if (var9 != null) {
-                        try {
-                            bufferedwriter.close();
-                        } catch (Throwable var17) {
-                            var9.addSuppressed(var17);
-                        }
-                    } else {
-                        bufferedwriter.close();
-                    }
-                }
-
             }
         }
 
@@ -271,31 +270,17 @@ public class LangMerger implements IDataProvider {
     protected String createString(List<Object> data, int missingKeys) {
         StringBuilder builder = new StringBuilder();
         builder.append("{\n");
-        if (missingKeys != -1) {
+        if (missingKeys != -1)
             builder.append("\t\"_\": \"Missing Localizations: " + missingKeys + "\",\n");
-        }
-
         data.forEach(builder::append);
-        builder.append("\t\"_\": \"Thank you for translating Create!\"\n\n");
+        builder.append("\t\"_\": \"Thank you for translating Create Sky Addition!\"\n\n");
         builder.append("}");
         return builder.toString();
     }
 
-    private class ForeignLangEntry extends cn.dancingsnow.create_sky.data.client.LangMerger.LangEntry {
-        private boolean missing;
-
-        ForeignLangEntry(String key, String value, Map<String, String> localizationMap) {
-            super(key, (String) localizationMap.getOrDefault(key, "UNLOCALIZED: " + value));
-            this.missing = !localizationMap.containsKey(key);
-        }
-
-        public boolean isMissing() {
-            return this.missing;
-        }
-    }
-
     private class LangEntry {
         static final String ENTRY_FORMAT = "\t\"%s\": %s,\n";
+
         private String key;
         private String value;
 
@@ -304,9 +289,26 @@ public class LangMerger implements IDataProvider {
             this.value = value;
         }
 
+        @Override
         public String toString() {
-            return String.format("\t\"%s\": %s,\n", this.key, cn.dancingsnow.create_sky.data.client.LangMerger.GSON.toJson(this.value, String.class));
+            return String.format(ENTRY_FORMAT, key, GSON.toJson(value, String.class));
         }
+
+    }
+
+    private class ForeignLangEntry extends LangEntry {
+
+        private boolean missing;
+
+        ForeignLangEntry(String key, String value, Map<String, String> localizationMap) {
+            super(key, localizationMap.getOrDefault(key, "UNLOCALIZED: " + value));
+            missing = !localizationMap.containsKey(key);
+        }
+
+        public boolean isMissing() {
+            return missing;
+        }
+
     }
 }
 

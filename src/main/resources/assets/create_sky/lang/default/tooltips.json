@@ -1,0 +1,14 @@
+{
+  "item.create_sky.suggestion.mechanisms": "§7建议自动化生产",
+
+  "item.create_sky.tooltip.kinetic_mechanism": "§6章节 1",
+  "item.create_sky.tooltip.incomplete_kinetic_mechanism": "§6章节 1",
+  "item.create_sky.tooltip.sealed_mechanism": "§6章节 1A",
+  "item.create_sky.tooltip.infernal_mechanism": "§6章节 2A",
+  "item.create_sky.tooltip.incomplete_infernal_mechanism": "§6章节 2A",
+  "item.create_sky.tooltip.inductive_mechanism": "§6章节 3",
+  "item.create_sky.tooltip.incomplete_inductive_mechanism": "§6章节 3",
+  "item.create_sky.tooltip.abstruse_mechanism": "§6章节 3A",
+  "item.create_sky.tooltip.calculation_mechanism": "§6章节 4",
+  "item.create_sky.tooltip.incomplete_calculation_mechanism": "§6章节 4"
+}
