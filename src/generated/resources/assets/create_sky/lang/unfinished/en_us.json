@@ -1,5 +1,5 @@
 {
-	"_": "Missing Localizations: 10",
+	"_": "缺少的条目: 12",
 
 	"_": "->------------------------]  Game Elements  [------------------------<-",
 
@@ -18,16 +18,16 @@
 	"item.create_sky.multiply": "×",
 	"item.create_sky.divide": "÷",
 	"item.create_sky.missingno": "∄",
-	"item.create_sky.kinetic_mechanism": "UNLOCALIZED: 动力构件",
-	"item.create_sky.incomplete_kinetic_mechanism": "UNLOCALIZED: 动力构件（半成品）",
-	"item.create_sky.sealed_mechanism": "UNLOCALIZED: 密封构件",
-	"item.create_sky.infernal_mechanism": "UNLOCALIZED: 下届构件",
-	"item.create_sky.incomplete_infernal_mechanism": "UNLOCALIZED: 下届构件（半成品）",
-	"item.create_sky.inductive_mechanism": "UNLOCALIZED: 感应构件",
-	"item.create_sky.incomplete_inductive_mechanism": "UNLOCALIZED: 感应构件（半成品）",
-	"item.create_sky.abstruse_mechanism": "UNLOCALIZED: 精湛构件",
-	"item.create_sky.calculation_mechanism": "UNLOCALIZED: 运算构件",
-	"item.create_sky.incomplete_calculation_mechanism": "UNLOCALIZED: 运算构件（半成品）",
+	"item.create_sky.kinetic_mechanism": "未本地化: 动力构件",
+	"item.create_sky.incomplete_kinetic_mechanism": "未本地化: 动力构件（半成品）",
+	"item.create_sky.sealed_mechanism": "未本地化: 密封构件",
+	"item.create_sky.infernal_mechanism": "未本地化: 下届构件",
+	"item.create_sky.incomplete_infernal_mechanism": "未本地化: 下届构件（半成品）",
+	"item.create_sky.inductive_mechanism": "未本地化: 感应构件",
+	"item.create_sky.incomplete_inductive_mechanism": "未本地化: 感应构件（半成品）",
+	"item.create_sky.abstruse_mechanism": "未本地化: 精湛构件",
+	"item.create_sky.calculation_mechanism": "未本地化: 运算构件",
+	"item.create_sky.incomplete_calculation_mechanism": "未本地化: 运算构件（半成品）",
 
 	"block.create_sky.andesite_machine": "Andesite Machine",
 	"block.create_sky.copper_machine": "Copper Machine",
@@ -54,6 +54,8 @@
 
 	"_": "->------------------------]  Advancements  [------------------------<-",
 
+	"advancement.create_sky.root": "未本地化: 开始CreateSky",
+	"advancement.create_sky.root.desc": "未本地化: 开始你的Create Sky 之旅",
 
 
 	"_": "->------------------------]  UI & Messages  [------------------------<-",
@@ -74,6 +76,6 @@
 	"item.create_sky.tooltip.calculation_mechanism": "§6Tier 4",
 	"item.create_sky.tooltip.incomplete_calculation_mechanism": "§6Tier 4",
 
-	"_": "Thank you for translating Create Sky Addition!"
+	"_": "感谢你翻译 Create Sky Addition!"
 
 }

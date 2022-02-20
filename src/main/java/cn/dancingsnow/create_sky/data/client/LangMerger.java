@@ -101,19 +101,19 @@ public class LangMerger implements IDataProvider {
         if (mergedLangData.isEmpty())
             return;
 
-        save(cache, mergedLangData, -1, path, "Merging zh_cn.json with hand-written lang entries...");
+        save(cache, mergedLangData, -1, path, "合并 zh_cn.json 带有手写的语言条目...");
         for (Map.Entry<String, List<Object>> localization : populatedLangData.entrySet()) {
             String key = localization.getKey();
             Path populatedLangPath = this.gen.getOutputFolder()
                     .resolve("assets/" + CreateSky.MOD_ID + "/lang/unfinished/" + key);
             save(cache, localization.getValue(), missingTranslationTally.get(key)
-                    .intValue(), populatedLangPath, "Populating " + key + " with missing entries...");
+                    .intValue(), populatedLangPath, "缺少 " + key + " 条目, 正在填充...");
         }
     }
 
     private void collectExistingEntries(Path path) throws IOException {
         if (!Files.exists(path)) {
-            CreateSky.LOGGER.warn("Nothing to merge! It appears no lang was generated before me.");
+            CreateSky.LOGGER.warn("没有什么可以合并的！ 在我之前似乎没有生成任何语言。");
             return;
         }
 
@@ -141,11 +141,12 @@ public class LangMerger implements IDataProvider {
                     String key = entry.getKey();
                     if (shouldIgnore(key))
                         return;
-                    if (isInLangPartials(key) & finalHeader.equals("Game Elements"))
-                        return;
+                    if (isInLangPartials(key) )
+                        if (finalHeader.equals("Game Elements"))
+                            return;
                     String value = entry.getValue()
                             .getAsString();
-                    if (value.equals("Thank you for translating Create Sky Addition!"))
+                    if (value.equals("感谢你翻译 Create Sky Addition!"))
                         return;
                     if (!previousKey.getValue()
                             .isEmpty() && shouldAddLineBreak(key, previousKey.getValue()))
@@ -271,9 +272,9 @@ public class LangMerger implements IDataProvider {
         StringBuilder builder = new StringBuilder();
         builder.append("{\n");
         if (missingKeys != -1)
-            builder.append("\t\"_\": \"Missing Localizations: " + missingKeys + "\",\n");
+            builder.append("\t\"_\": \"缺少的条目: " + missingKeys + "\",\n");
         data.forEach(builder::append);
-        builder.append("\t\"_\": \"Thank you for translating Create Sky Addition!\"\n\n");
+        builder.append("\t\"_\": \"感谢你翻译 Create Sky Addition!\"\n\n");
         builder.append("}");
         return builder.toString();
     }
@@ -301,7 +302,7 @@ public class LangMerger implements IDataProvider {
         private boolean missing;
 
         ForeignLangEntry(String key, String value, Map<String, String> localizationMap) {
-            super(key, localizationMap.getOrDefault(key, "UNLOCALIZED: " + value));
+            super(key, localizationMap.getOrDefault(key, "未本地化: " + value));
             missing = !localizationMap.containsKey(key);
         }
 

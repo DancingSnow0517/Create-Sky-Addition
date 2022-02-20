@@ -1,0 +1,29 @@
+{
+  "display": {
+    "icon": {
+      "item": "create_sky:kinetic_mechanism"
+    },
+    "title": {
+      "translate": "advancement.create_sky.root"
+    },
+    "description": {
+      "translate": "advancement.create_sky.root.desc"
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false,
+    "background": "create_sky:textures/block/zinc_casing.png"
+  },
+  "criteria": {
+    "0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {}
+    }
+  },
+  "requirements": [
+    [
+      "0"
+    ]
+  ]
+}

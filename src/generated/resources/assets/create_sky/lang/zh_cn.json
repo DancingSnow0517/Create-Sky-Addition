@@ -17,7 +17,6 @@
 	"item.create_sky.multiply": "×",
 	"item.create_sky.divide": "÷",
 	"item.create_sky.missingno": "∄",
-
 	"item.create_sky.kinetic_mechanism": "动力构件",
 	"item.create_sky.incomplete_kinetic_mechanism": "动力构件（半成品）",
 	"item.create_sky.sealed_mechanism": "密封构件",
@@ -54,6 +53,8 @@
 
 	"_": "->------------------------]  Advancements  [------------------------<-",
 
+	"advancement.create_sky.root": "开始CreateSky",
+	"advancement.create_sky.root.desc": "开始你的 Create Sky 之旅",
 
 
 	"_": "->------------------------]  UI & Messages  [------------------------<-",
@@ -74,6 +75,6 @@
 	"item.create_sky.tooltip.calculation_mechanism": "§6章节 4",
 	"item.create_sky.tooltip.incomplete_calculation_mechanism": "§6章节 4",
 
-	"_": "Thank you for translating Create Sky Addition!"
+	"_": "感谢你翻译 Create Sky Addition!"
 
 }
