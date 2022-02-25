@@ -14,9 +14,9 @@ import java.util.List;
 
 public class Mechanisms extends Item {
     private final TextComponent text;
-    private final Boolean suggestion;
+    private final boolean suggestion;
 
-    public Mechanisms(Properties properties, TranslationTextComponent textComponent, Boolean suggestion) {
+    public Mechanisms(Properties properties, TranslationTextComponent textComponent, boolean suggestion) {
         super(properties);
         this.text = textComponent;
         this.suggestion = suggestion;
@@ -25,7 +25,7 @@ public class Mechanisms extends Item {
     @Override
     public void appendHoverText(ItemStack stack, @Nullable World world, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
         tooltip.add(text);
-        if (suggestion == Boolean.TRUE) {
+        if (suggestion) {
             tooltip.add(new TranslationTextComponent("item.create_sky.mechanisms.suggestion"));
         }
         super.appendHoverText(stack, world, tooltip, flagIn);

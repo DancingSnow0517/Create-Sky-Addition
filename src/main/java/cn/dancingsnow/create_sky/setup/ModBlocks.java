@@ -1,103 +1,114 @@
 package cn.dancingsnow.create_sky.setup;
 
+import cn.dancingsnow.create_sky.CreateSky;
 import cn.dancingsnow.create_sky.setup.Custom.block.Machines;
+import com.simibubi.create.content.AllSections;
 import com.simibubi.create.content.contraptions.base.CasingBlock;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
+import com.simibubi.create.foundation.data.CreateRegistrate;
+import com.simibubi.create.repack.registrate.util.entry.BlockEntry;
 import net.minecraft.block.SoundType;
-import net.minecraft.block.material.Material;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
 import net.minecraftforge.common.ToolType;
-import net.minecraftforge.fml.RegistryObject;
-
-import java.util.function.Supplier;
 
 public class ModBlocks {
-    static void register() {
-    }
 
-    public static final RegistryObject<Block> ANDESITE_MACHINE = registry("andesite_machine", () ->
-            new Machines(AbstractBlock.Properties.of(Material.METAL)
+    private static final CreateRegistrate REGISTRATE = CreateSky.getRegistrate().itemGroup(() -> ModGroups.ADDITIONS);
+
+    static {REGISTRATE.startSection(AllSections.MATERIALS);}
+
+    public static final BlockEntry<Machines> ANDESITE_MACHINE = REGISTRATE
+            .block("andesite_machine", Machines::new)
+            .properties(properties -> properties
                     .sound(SoundType.LANTERN)
                     .harvestLevel(1)
                     .harvestTool(ToolType.PICKAXE)
                     .strength(6)
                     .requiresCorrectToolForDrops()
-                    .noOcclusion()));
-    public static final RegistryObject<Block> COPPER_MACHINE = registry("copper_machine", () ->
-            new Machines(AbstractBlock.Properties.of(Material.METAL)
+                    .noOcclusion())
+            .register();
+    public static final BlockEntry<Machines> COPPER_MACHINE = REGISTRATE
+            .block("copper_machine", Machines::new)
+            .properties(properties -> properties
                     .sound(SoundType.LANTERN)
                     .harvestLevel(2)
                     .harvestTool(ToolType.PICKAXE)
                     .strength(6)
                     .requiresCorrectToolForDrops()
-                    .noOcclusion()));
-    public static final RegistryObject<Block> BRASS_MACHINE = registry("brass_machine", () ->
-            new Machines(AbstractBlock.Properties.of(Material.METAL)
+                    .noOcclusion())
+            .register();
+    public static final BlockEntry<Machines> BRASS_MACHINE = REGISTRATE
+            .block("brass_machine", Machines::new)
+            .properties(properties -> properties
                     .sound(SoundType.LANTERN)
                     .harvestLevel(2)
                     .harvestTool(ToolType.PICKAXE)
                     .strength(6)
                     .requiresCorrectToolForDrops()
-                    .noOcclusion()));
-    public static final RegistryObject<Block> ZINC_MACHINE = registry("zinc_machine", () ->
-            new Machines(AbstractBlock.Properties.of(Material.METAL)
+                    .noOcclusion())
+            .register();
+    public static final BlockEntry<Machines> ZINC_MACHINE = REGISTRATE
+            .block("zinc_machine", Machines::new)
+            .properties(properties -> properties
                     .sound(SoundType.LANTERN)
                     .harvestLevel(2)
                     .harvestTool(ToolType.PICKAXE)
                     .strength(6)
                     .requiresCorrectToolForDrops()
-                    .noOcclusion()));
-    public static final RegistryObject<Block> ENDERIUM_MACHINE = registry("enderium_machine", () ->
-            new Machines(AbstractBlock.Properties.of(Material.METAL)
+                    .noOcclusion())
+            .register();
+    public static final BlockEntry<Machines> ENDERIUM_MACHINE = REGISTRATE
+            .block("enderium_machine", Machines::new)
+            .properties(properties -> properties
                     .sound(SoundType.LANTERN)
                     .harvestLevel(3)
                     .harvestTool(ToolType.PICKAXE)
                     .strength(6)
                     .requiresCorrectToolForDrops()
-                    .noOcclusion()));
+                    .noOcclusion())
+            .register();
 
-    public static final RegistryObject<Block> ZINC_CASING = registry("zinc_casing", () ->
-            new CasingBlock(AbstractBlock.Properties.of(Material.METAL)
+    public static final BlockEntry<CasingBlock> ZINC_CASING = REGISTRATE
+            .block("zinc_casing", CasingBlock::new)
+            .properties(properties -> properties
                     .sound(SoundType.METAL)
                     .harvestLevel(2)
                     .harvestTool(ToolType.PICKAXE)
                     .strength(6)
                     .requiresCorrectToolForDrops()
-                    .noOcclusion()));
-    public static final RegistryObject<Block> INVAR_CASING = registry("invar_casing", () ->
-            new CasingBlock(AbstractBlock.Properties.of(Material.METAL)
+                    .noOcclusion())
+            .register();
+    public static final BlockEntry<CasingBlock> INVAR_CASING = REGISTRATE
+            .block("invar_casing", CasingBlock::new)
+            .properties(properties -> properties
                     .sound(SoundType.METAL)
                     .harvestLevel(2)
                     .harvestTool(ToolType.PICKAXE)
                     .strength(6)
                     .requiresCorrectToolForDrops()
-                    .noOcclusion()));
-    public static final RegistryObject<Block> FLUIX_CASING = registry("fluix_casing", () ->
-            new CasingBlock(AbstractBlock.Properties.of(Material.METAL)
+                    .noOcclusion())
+            .register();
+    public static final BlockEntry<CasingBlock> FLUIX_CASING = REGISTRATE
+            .block("fluix_casing", CasingBlock::new)
+            .properties(properties -> properties
                     .sound(SoundType.METAL)
                     .harvestLevel(2)
                     .harvestTool(ToolType.PICKAXE)
                     .strength(6)
                     .requiresCorrectToolForDrops()
-                    .noOcclusion()));
-    public static final RegistryObject<Block> ENDERIUM_CASING = registry("enderium_casing", () ->
-            new CasingBlock(AbstractBlock.Properties.of(Material.METAL)
+                    .noOcclusion())
+            .register();
+    public static final BlockEntry<CasingBlock> ENDERIUM_CASING = REGISTRATE
+            .block("enderium_casing", CasingBlock::new)
+            .properties(properties -> properties
                     .sound(SoundType.METAL)
                     .harvestLevel(2)
                     .harvestTool(ToolType.PICKAXE)
                     .strength(6)
                     .requiresCorrectToolForDrops()
-                    .noOcclusion()));
+                    .noOcclusion())
+            .register();
 
-    private static <T extends Block> RegistryObject<T> registryNoItem(String name, Supplier<T> block) {
-        return Registration.BLOCKS.register(name, block);
+    static void register() {
+        CreateSky.LOGGER.debug("Registering ModBlocks!");
     }
 
-    private static <T extends Block> RegistryObject<T> registry(String name, Supplier<T> block) {
-        RegistryObject<T> ret = registryNoItem(name, block);
-        Registration.ITEMS.register(name, () -> new BlockItem(ret.get(), new Item.Properties().tab(ModGroups.ADDITIONS)));
-        return ret;
-    }
 }

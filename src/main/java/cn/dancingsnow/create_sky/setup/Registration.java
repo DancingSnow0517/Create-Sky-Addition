@@ -31,10 +31,9 @@ public class Registration {
         //CONTAINERS.register(modEventBus);
         //TILE_ENTITIES.register(modEventBus);
         //RECIPE_SERIALIZERS.register(modEventBus);
-
+        ModFluids.register();
         ModBlocks.register();
         ModItems.register();
-        ModFluids.register();
         ModEnchantments.register();
         //ModContainerTypes.register();
         //ModTileEntityTypes.register();

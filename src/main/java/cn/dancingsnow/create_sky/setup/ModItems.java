@@ -3,52 +3,59 @@ package cn.dancingsnow.create_sky.setup;
 import cn.dancingsnow.create_sky.CreateSky;
 import cn.dancingsnow.create_sky.setup.Custom.item.Mechanisms;
 import cn.dancingsnow.create_sky.setup.Custom.item.Numbers;
+import com.simibubi.create.content.AllSections;
+import com.simibubi.create.foundation.data.CreateRegistrate;
+import com.simibubi.create.repack.registrate.util.entry.ItemEntry;
+import net.minecraft.fluid.FlowingFluid;
 import net.minecraft.item.BucketItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.Rarity;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraftforge.fml.RegistryObject;
-import net.minecraftforge.fml.common.Mod;
 
+@SuppressWarnings("unused")
 public class ModItems {
 
     private static final String TOOLTIPS = "item." + CreateSky.MOD_ID + ".tooltip.%s";
+    private static final CreateRegistrate REGISTRATE = CreateSky.getRegistrate().itemGroup(() -> ModGroups.ADDITIONS);
 
-    public static final RegistryObject<Item> KINETIC_MECHANISM = getMechanisms("kinetic_mechanism", Boolean.TRUE);
-    public static final RegistryObject<Item> SEALED_MECHANISM = getMechanisms("sealed_mechanism", Boolean.FALSE);
-    public static final RegistryObject<Item> INFERNAL_MECHANISM = getMechanisms("infernal_mechanism", Boolean.FALSE);
-    public static final RegistryObject<Item> INDUCTIVE_MECHANISM = getMechanisms("inductive_mechanism", Boolean.TRUE, Rarity.UNCOMMON);
-    public static final RegistryObject<Item> ABSTRUSE_MECHANISM = getMechanisms("abstruse_mechanism", Boolean.FALSE, Rarity.RARE);
-    public static final RegistryObject<Item> CALCULATION_MECHANISM = getMechanisms("calculation_mechanism", Boolean.TRUE, Rarity.RARE);
+    static {REGISTRATE.startSection(AllSections.KINETICS);}
 
-    public static final RegistryObject<Item> INCOMPLETE_KINETIC_MECHANISM = getMechanismsNotab("incomplete_kinetic_mechanism", Boolean.TRUE);
-    public static final RegistryObject<Item> INCOMPLETE_INFERNAL_MECHANISM = getMechanismsNotab("incomplete_infernal_mechanism", Boolean.FALSE);
-    public static final RegistryObject<Item> INCOMPLETE_INDUCTIVE_MECHANISM = getMechanismsNotab("incomplete_inductive_mechanism", Boolean.TRUE);
-    public static final RegistryObject<Item> INCOMPLETE_CALCULATION_MECHANISM = getMechanismsNotab("incomplete_calculation_mechanism", Boolean.TRUE);
+    public static final ItemEntry<Mechanisms> KINETIC_MECHANISM = getMechanisms("kinetic_mechanism", true);
+    public static final ItemEntry<Mechanisms> SEALED_MECHANISM = getMechanisms("sealed_mechanism", true);
+    public static final ItemEntry<Mechanisms> INFERNAL_MECHANISM = getMechanisms("infernal_mechanism", false);
+    public static final ItemEntry<Mechanisms> INDUCTIVE_MECHANISM = getMechanisms("inductive_mechanism", true, Rarity.UNCOMMON);
+    public static final ItemEntry<Mechanisms> ABSTRUSE_MECHANISM = getMechanisms("abstruse_mechanism", false, Rarity.RARE);
+    public static final ItemEntry<Mechanisms> CALCULATION_MECHANISM = getMechanisms("calculation_mechanism", true, Rarity.RARE);
 
-    public static final RegistryObject<Item> ASH = Registration.ITEMS.register("ash", () ->
-            new Item(new Item.Properties().tab(ModGroups.ADDITIONS)));
+    public static final ItemEntry<Item> INCOMPLETE_KINETIC_MECHANISM = getMechanismsNotab("incomplete_kinetic_mechanism");
+    public static final ItemEntry<Item> INCOMPLETE_INFERNAL_MECHANISM = getMechanismsNotab("incomplete_infernal_mechanism");
+    public static final ItemEntry<Item> INCOMPLETE_INDUCTIVE_MECHANISM = getMechanismsNotab("incomplete_inductive_mechanism");
+    public static final ItemEntry<Item> INCOMPLETE_CALCULATION_MECHANISM = getMechanismsNotab("incomplete_calculation_mechanism");
 
-    public static final RegistryObject<Item> ZERO = getNumbers("zero");
-    public static final RegistryObject<Item> ONE = getNumbers("one");
-    public static final RegistryObject<Item> TWO = getNumbers("two");
-    public static final RegistryObject<Item> THREE = getNumbers("three");
-    public static final RegistryObject<Item> FOUR = getNumbers("four");
-    public static final RegistryObject<Item> FIVE = getNumbers("five");
-    public static final RegistryObject<Item> SIX = getNumbers("six");
-    public static final RegistryObject<Item> SEVEN = getNumbers("seven");
-    public static final RegistryObject<Item> EIGHT = getNumbers("eight");
-    public static final RegistryObject<Item> NINE = getNumbers("nine");
-    public static final RegistryObject<Item> PLUS = getNumbers("plus");
-    public static final RegistryObject<Item> MINUS = getNumbers("minus");
-    public static final RegistryObject<Item> MULTIPLY = getNumbers("multiply");
-    public static final RegistryObject<Item> DIVIDE = getNumbers("divide");
-    public static final RegistryObject<Item> MISSINGNO = getNumbers("missingno");
+    public static final ItemEntry<Item> ASH = REGISTRATE.item("ash", Item::new).register();
 
-    public static final RegistryObject<Item> CHARGED_CALCULATOR = Registration.ITEMS.register("charged_calculator", () ->
-            new Item(new Item.Properties()
-                    .tab(ModGroups.ADDITIONS)
-                    .stacksTo(1)));
+    public static final ItemEntry<Numbers> ZERO = getNumbers("zero");
+    public static final ItemEntry<Numbers> ONE = getNumbers("one");
+    public static final ItemEntry<Numbers> TWO = getNumbers("two");
+    public static final ItemEntry<Numbers> THREE = getNumbers("three");
+    public static final ItemEntry<Numbers> FOUR = getNumbers("four");
+    public static final ItemEntry<Numbers> FIVE = getNumbers("five");
+    public static final ItemEntry<Numbers> SIX = getNumbers("six");
+    public static final ItemEntry<Numbers> SEVEN = getNumbers("seven");
+    public static final ItemEntry<Numbers> EIGHT = getNumbers("eight");
+    public static final ItemEntry<Numbers> NINE = getNumbers("nine");
+    public static final ItemEntry<Numbers> PLUS = getNumbers("plus");
+    public static final ItemEntry<Numbers> MINUS = getNumbers("minus");
+    public static final ItemEntry<Numbers> MULTIPLY = getNumbers("multiply");
+    public static final ItemEntry<Numbers> DIVIDE = getNumbers("divide");
+    public static final ItemEntry<Numbers> MISSINGNO = getNumbers("missingno");
+
+    public static final ItemEntry<Item> CHARGED_CALCULATOR = REGISTRATE
+            .item("charged_calculator", Item::new)
+            .properties(properties -> properties.stacksTo(1))
+            .register();
+
     public static final RegistryObject<Item> LOGIC_BUCKET = Registration.ITEMS.register("logic_bucket", () ->
             new BucketItem(() -> ModFluids.LOGIC_FLUID.get(), new Item.Properties()
                     .tab(ModGroups.ADDITIONS)
@@ -99,28 +106,37 @@ public class ModItems {
                     .stacksTo(1)));
 
     static void register() {
+        CreateSky.LOGGER.debug("Registering Moditems");
     }
 
-    public static RegistryObject<Item> getMechanisms(String reg_id, Boolean suggestion) {
+    public static ItemEntry<Mechanisms> getMechanisms(String reg_id, boolean suggestion) {
+        return getMechanisms(reg_id, suggestion, Rarity.COMMON);
+    }
+
+    public static ItemEntry<Mechanisms> getMechanisms(String reg_id, boolean suggestion, Rarity rarity) {
         TranslationTextComponent textComponent = new TranslationTextComponent(String.format(TOOLTIPS, reg_id));
-        return Registration.ITEMS.register(reg_id, () ->
-                new Mechanisms(new Item.Properties().tab(ModGroups.ADDITIONS), textComponent, suggestion));
+        return REGISTRATE
+                .item(reg_id, p -> new Mechanisms(p, textComponent, suggestion))
+                .register();
     }
 
-    public static RegistryObject<Item> getMechanisms(String reg_id, Boolean suggestion, Rarity rarity) {
-        TranslationTextComponent textComponent = new TranslationTextComponent(String.format(TOOLTIPS, reg_id));
-        return Registration.ITEMS.register(reg_id, () ->
-                new Mechanisms(new Item.Properties().tab(ModGroups.ADDITIONS).rarity(rarity), textComponent, suggestion));
+    public static ItemEntry<Item> getMechanismsNotab(String reg_id) {
+        return REGISTRATE
+                .item(reg_id, p -> new Item(p))
+                .properties(properties -> properties.stacksTo(64))
+                .register();
     }
 
-    public static RegistryObject<Item> getMechanismsNotab(String reg_id, Boolean suggestion) {
-        TranslationTextComponent textComponent = new TranslationTextComponent(String.format(TOOLTIPS, reg_id));
-        return Registration.ITEMS.register(reg_id, () ->
-                new Mechanisms(new Item.Properties(), textComponent, suggestion));
+    public static ItemEntry<Numbers> getNumbers(String reg_id) {
+        return REGISTRATE
+                .item(reg_id, p -> new Numbers(p))
+                .properties(properties -> properties.stacksTo(64))
+                .register();
     }
 
-    public static RegistryObject<Item> getNumbers(String reg_id) {
+    public static RegistryObject<BucketItem> getBucketItem(String reg_id, FlowingFluid fluid) {
         return Registration.ITEMS.register(reg_id, () ->
-                new Numbers(new Item.Properties().tab(ModGroups.ADDITIONS).stacksTo(64)));
+                new BucketItem(fluid, new Item.Properties().tab(ModGroups.ADDITIONS).stacksTo(1)));
     }
+
 }
