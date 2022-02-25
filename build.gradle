@@ -1,12 +1,9 @@
 buildscript {
-    repositories {
-        maven { url = 'https://maven.minecraftforge.net' }
-        mavenCentral()
-    }
 
     repositories {
         // These repositories are only for Gradle plugins, put any other repositories in the repository block further below
         maven { url = 'https://maven.minecraftforge.net' }
+        maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
         mavenCentral()
     }
 
@@ -36,9 +33,15 @@ minecraft {
     runs {
         client {
             workingDirectory project.file('run')
-            property 'forge.logging.markers', 'REGISTRIES'
 
+            arg '-mixin.config=create_sky.mixins.json'
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${project.projectDir}/build/createSrgToMcp/output.srg"
+
+            property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
+
+            property 'fml.earlyprogresswindow', 'false'
 
             mods {
                 create_sky {
@@ -52,6 +55,10 @@ minecraft {
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
 
+            arg '-mixin.config=create_sky.mixins.json'
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${project.projectDir}/build/createSrgToMcp/output.srg"
+
             mods {
                 create_sky {
                     source sourceSets.main
@@ -63,6 +70,12 @@ minecraft {
             workingDirectory project.file('run')
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
+
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${project.projectDir}/build/createSrgToMcp/output.srg"
+
+            property 'fml.earlyprogresswindow', 'false'
+
             args '--mod', 'create_sky', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
             mods {
                 create_sky {
@@ -71,6 +84,11 @@ minecraft {
             }
         }
     }
+}
+mixin {
+    add sourceSets.main, "create_sky.refmap.json"
+
+    config "create_sky.mixins.json"
 }
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 repositories {
