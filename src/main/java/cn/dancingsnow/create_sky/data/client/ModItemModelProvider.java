@@ -2,6 +2,7 @@ package cn.dancingsnow.create_sky.data.client;
 
 import cn.dancingsnow.create_sky.CreateSky;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;

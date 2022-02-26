@@ -19,7 +19,7 @@ public class ModItems {
     private static final String TOOLTIPS = "item." + CreateSky.MOD_ID + ".tooltip.%s";
     private static final CreateRegistrate REGISTRATE = CreateSky.getRegistrate().itemGroup(() -> ModGroups.ADDITIONS);
 
-    static {REGISTRATE.startSection(AllSections.KINETICS);}
+    static {REGISTRATE.startSection(AllSections.MATERIALS);}
 
     public static final ItemEntry<Mechanisms> KINETIC_MECHANISM = getMechanisms("kinetic_mechanism", true);
     public static final ItemEntry<Mechanisms> SEALED_MECHANISM = getMechanisms("sealed_mechanism", true);
@@ -28,12 +28,13 @@ public class ModItems {
     public static final ItemEntry<Mechanisms> ABSTRUSE_MECHANISM = getMechanisms("abstruse_mechanism", false, Rarity.RARE);
     public static final ItemEntry<Mechanisms> CALCULATION_MECHANISM = getMechanisms("calculation_mechanism", true, Rarity.RARE);
 
-    public static final ItemEntry<Item> INCOMPLETE_KINETIC_MECHANISM = getMechanismsNotab("incomplete_kinetic_mechanism");
-    public static final ItemEntry<Item> INCOMPLETE_INFERNAL_MECHANISM = getMechanismsNotab("incomplete_infernal_mechanism");
-    public static final ItemEntry<Item> INCOMPLETE_INDUCTIVE_MECHANISM = getMechanismsNotab("incomplete_inductive_mechanism");
-    public static final ItemEntry<Item> INCOMPLETE_CALCULATION_MECHANISM = getMechanismsNotab("incomplete_calculation_mechanism");
-
     public static final ItemEntry<Item> ASH = REGISTRATE.item("ash", Item::new).register();
+    public static final ItemEntry<Item> COMPUTATION_MATRIX = REGISTRATE
+            .item("computation_matrix", Item::new)
+            .properties(properties -> properties
+                    .stacksTo(1)
+                    .rarity(Rarity.EPIC))
+            .register();
 
     public static final ItemEntry<Numbers> ZERO = getNumbers("zero");
     public static final ItemEntry<Numbers> ONE = getNumbers("one");
@@ -55,6 +56,13 @@ public class ModItems {
             .item("charged_calculator", Item::new)
             .properties(properties -> properties.stacksTo(1))
             .register();
+
+    static {REGISTRATE.startSection(AllSections.UNASSIGNED);}
+
+    public static final ItemEntry<Item> INCOMPLETE_KINETIC_MECHANISM = getMechanismsNotab("incomplete_kinetic_mechanism");
+    public static final ItemEntry<Item> INCOMPLETE_INFERNAL_MECHANISM = getMechanismsNotab("incomplete_infernal_mechanism");
+    public static final ItemEntry<Item> INCOMPLETE_INDUCTIVE_MECHANISM = getMechanismsNotab("incomplete_inductive_mechanism");
+    public static final ItemEntry<Item> INCOMPLETE_CALCULATION_MECHANISM = getMechanismsNotab("incomplete_calculation_mechanism");
 
     public static final RegistryObject<Item> LOGIC_BUCKET = Registration.ITEMS.register("logic_bucket", () ->
             new BucketItem(() -> ModFluids.LOGIC_FLUID.get(), new Item.Properties()
@@ -122,14 +130,14 @@ public class ModItems {
 
     public static ItemEntry<Item> getMechanismsNotab(String reg_id) {
         return REGISTRATE
-                .item(reg_id, p -> new Item(p))
+                .item(reg_id, Item::new)
                 .properties(properties -> properties.stacksTo(64))
                 .register();
     }
 
     public static ItemEntry<Numbers> getNumbers(String reg_id) {
         return REGISTRATE
-                .item(reg_id, p -> new Numbers(p))
+                .item(reg_id, Numbers::new)
                 .properties(properties -> properties.stacksTo(64))
                 .register();
     }

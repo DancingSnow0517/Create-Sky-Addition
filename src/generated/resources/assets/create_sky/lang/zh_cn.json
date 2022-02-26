@@ -30,6 +30,7 @@
 	"item.create_sky.calculation_mechanism": "运算构件",
 	"item.create_sky.incomplete_calculation_mechanism": "运算构件（半成品）",
 	"item.create_sky.ash": "灰烬",
+	"item.create_sky.computation_matrix": "计算矩阵",
 
 	"block.create_sky.andesite_machine": "安山岩机械装置",
 	"block.create_sky.copper_machine": "铜制机械装置",
