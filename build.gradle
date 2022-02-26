@@ -144,7 +144,10 @@ dependencies {
     implementation fg.deobf("curse.maven:cofh-core-69162:${cofhcore_file}")
     implementation fg.deobf("curse.maven:thermal-foundation-222880:${thermal_file}")
     implementation fg.deobf("curse.maven:ctm-267602:${ctm_file}")
-    implementation fg.deobf("curse.maven:applied-energistics-2-223794:${ae2_file}")
+    // implementation fg.deobf("curse.maven:applied-energistics-2-223794:${ae2_file}")
+    implementation fg.deobf("curse.maven:ftb-ultimine-forge-386134:${ultimine_file}")
+    implementation fg.deobf("curse.maven:ftb-library-forge-404465:${ftblibrary_file}")
+    implementation fg.deobf("curse.maven:architectury-forge-419699:${architectury_file}")
 
 }
 jar {

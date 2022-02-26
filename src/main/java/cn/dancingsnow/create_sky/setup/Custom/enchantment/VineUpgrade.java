@@ -17,7 +17,7 @@ public class VineUpgrade extends Enchantment {
 
     @Override
     public int getMaxLevel() {
-        return 3;
+        return 1;
     }
 
     @Override
@@ -29,4 +29,31 @@ public class VineUpgrade extends Enchantment {
     public int getMaxCost(int p_223551_1_) {
         return getMinCost(p_223551_1_) + 50;
     }
+
+    @Override
+    public boolean isTradeable() {
+        return false;
+    }
+
+    @Override
+    public boolean isDiscoverable() {
+        return false;
+    }
+
+    @Override
+    public boolean isCurse() {
+        return false;
+    }
+
+    @Override
+    public boolean isTreasureOnly() {
+        return false;
+    }
+
+    @Override
+    public boolean isAllowedOnBooks() {
+        return true;
+    }
+
+
 }
