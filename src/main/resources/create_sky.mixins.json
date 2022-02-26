@@ -1,10 +1,10 @@
 {
   "package": "cn.dancingsnow.create_sky.mixin",
   "refmap": "create_sky.refmap.json",
-  "verbos": true,
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "FTBUltimineClientMixin"
+    "FTBUltimineClientMixin",
+    "FTBUltimineMixin"
   ],
   "client": [
     "TestMixin"
