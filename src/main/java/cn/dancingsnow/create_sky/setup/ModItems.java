@@ -4,6 +4,7 @@ import cn.dancingsnow.create_sky.CreateSky;
 import cn.dancingsnow.create_sky.setup.Custom.item.Mechanisms;
 import cn.dancingsnow.create_sky.setup.Custom.item.Numbers;
 import com.simibubi.create.content.AllSections;
+import com.simibubi.create.content.contraptions.itemAssembly.SequencedAssemblyItem;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.repack.registrate.util.entry.ItemEntry;
 import net.minecraft.fluid.FlowingFluid;
@@ -59,10 +60,10 @@ public class ModItems {
 
     static {REGISTRATE.startSection(AllSections.UNASSIGNED);}
 
-    public static final ItemEntry<Item> INCOMPLETE_KINETIC_MECHANISM = getMechanismsNotab("incomplete_kinetic_mechanism");
-    public static final ItemEntry<Item> INCOMPLETE_INFERNAL_MECHANISM = getMechanismsNotab("incomplete_infernal_mechanism");
-    public static final ItemEntry<Item> INCOMPLETE_INDUCTIVE_MECHANISM = getMechanismsNotab("incomplete_inductive_mechanism");
-    public static final ItemEntry<Item> INCOMPLETE_CALCULATION_MECHANISM = getMechanismsNotab("incomplete_calculation_mechanism");
+    public static final ItemEntry<SequencedAssemblyItem> INCOMPLETE_KINETIC_MECHANISM = getMechanismsNotab("incomplete_kinetic_mechanism");
+    public static final ItemEntry<SequencedAssemblyItem> INCOMPLETE_INFERNAL_MECHANISM = getMechanismsNotab("incomplete_infernal_mechanism");
+    public static final ItemEntry<SequencedAssemblyItem> INCOMPLETE_INDUCTIVE_MECHANISM = getMechanismsNotab("incomplete_inductive_mechanism");
+    public static final ItemEntry<SequencedAssemblyItem> INCOMPLETE_CALCULATION_MECHANISM = getMechanismsNotab("incomplete_calculation_mechanism");
 
     public static final RegistryObject<Item> LOGIC_BUCKET = Registration.ITEMS.register("logic_bucket", () ->
             new BucketItem(() -> ModFluids.LOGIC_FLUID.get(), new Item.Properties()
@@ -117,34 +118,28 @@ public class ModItems {
         CreateSky.LOGGER.debug("Registering Moditems");
     }
 
-    public static ItemEntry<Mechanisms> getMechanisms(String reg_id, boolean suggestion) {
+    private static ItemEntry<Mechanisms> getMechanisms(String reg_id, boolean suggestion) {
         return getMechanisms(reg_id, suggestion, Rarity.COMMON);
     }
 
-    public static ItemEntry<Mechanisms> getMechanisms(String reg_id, boolean suggestion, Rarity rarity) {
+    private static ItemEntry<Mechanisms> getMechanisms(String reg_id, boolean suggestion, Rarity rarity) {
         TranslationTextComponent textComponent = new TranslationTextComponent(String.format(TOOLTIPS, reg_id));
         return REGISTRATE
                 .item(reg_id, p -> new Mechanisms(p, textComponent, suggestion))
                 .register();
     }
 
-    public static ItemEntry<Item> getMechanismsNotab(String reg_id) {
+    private static ItemEntry<SequencedAssemblyItem> getMechanismsNotab(String reg_id) {
         return REGISTRATE
-                .item(reg_id, Item::new)
-                .properties(properties -> properties.stacksTo(64))
+                .item(reg_id, SequencedAssemblyItem::new)
                 .register();
     }
 
-    public static ItemEntry<Numbers> getNumbers(String reg_id) {
+    private static ItemEntry<Numbers> getNumbers(String reg_id) {
         return REGISTRATE
                 .item(reg_id, Numbers::new)
                 .properties(properties -> properties.stacksTo(64))
                 .register();
-    }
-
-    public static RegistryObject<BucketItem> getBucketItem(String reg_id, FlowingFluid fluid) {
-        return Registration.ITEMS.register(reg_id, () ->
-                new BucketItem(fluid, new Item.Properties().tab(ModGroups.ADDITIONS).stacksTo(1)));
     }
 
 }

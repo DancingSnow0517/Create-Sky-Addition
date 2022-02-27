@@ -1,30 +1,48 @@
-modLoader="javafml"
-loaderVersion="[36,)"
-license="GPL-3.0"
+modLoader = "javafml"
+loaderVersion = "[36,)"
+license = "GPL-3.0"
 [[mods]]
-modId="create_sky"
-version="${file.jarVersion}"
-displayName="Create Sky Addition"
-logoFile="create_sky.png"
-credits="Thanks for this example mod goes to Java"
-authors="DancingSnow"
-description='''
+modId = "create_sky"
+version = "${file.jarVersion}"
+displayName = "Create Sky Addition"
+logoFile = "create_sky.png"
+credits = "Thanks for this example mod goes to Java"
+authors = "DancingSnow"
+description = '''
 '''
 [[dependencies.create_sky]]
-    modId="forge"
-    mandatory=true
-    versionRange="[36,)"
-    ordering="NONE"
-    side="BOTH"
+modId = "forge"
+mandatory = true
+versionRange = "[36,)"
+ordering = "NONE"
+side = "BOTH"
 [[dependencies.create_sky]]
-    modId="minecraft"
-    mandatory=true
-    versionRange="[1.16.5,1.17)"
-    ordering="NONE"
-    side="BOTH"
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.16.5,1.17)"
+ordering = "NONE"
+side = "BOTH"
 [[dependencies.create_sky]]
-    modId="create"
-    mandatory=true
-    versionRange="v0.3.2g"
-    ordering="AFTER"
-    side="BOTH"
+modId = "create"
+mandatory = true
+versionRange = "[v0.3.2g,)"
+ordering = "AFTER"
+side = "BOTH"
+[[dependencies.create_sky]]
+modId = "flywheel"
+mandatory = true
+versionRange = "[1.16-0.2.3,1.16-0.3)"
+ordering = "AFTER"
+side = "BOTH"
+[[dependencies.create_sky]]
+modId = "thermal_foundation"
+mandatory = true
+versionRange = "[1.4.1,1.5]"
+ordering = "AFTER"
+side = "BOTH"
+[[dependencies.create_sky]]
+modId = "cofh_core"
+mandatory = true
+versionRange = "[1.4.1,1.5]"
+ordering = "AFTER"
+side = "BOTH"

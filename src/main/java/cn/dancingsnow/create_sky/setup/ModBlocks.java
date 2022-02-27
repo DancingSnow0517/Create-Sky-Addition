@@ -24,6 +24,7 @@ public class ModBlocks {
                     .strength(6)
                     .requiresCorrectToolForDrops()
                     .noOcclusion())
+            .simpleItem()
             .register();
     public static final BlockEntry<Machines> COPPER_MACHINE = REGISTRATE
             .block("copper_machine", Machines::new)
@@ -34,6 +35,7 @@ public class ModBlocks {
                     .strength(6)
                     .requiresCorrectToolForDrops()
                     .noOcclusion())
+            .simpleItem()
             .register();
     public static final BlockEntry<Machines> BRASS_MACHINE = REGISTRATE
             .block("brass_machine", Machines::new)
@@ -44,6 +46,7 @@ public class ModBlocks {
                     .strength(6)
                     .requiresCorrectToolForDrops()
                     .noOcclusion())
+            .simpleItem()
             .register();
     public static final BlockEntry<Machines> ZINC_MACHINE = REGISTRATE
             .block("zinc_machine", Machines::new)
@@ -54,6 +57,7 @@ public class ModBlocks {
                     .strength(6)
                     .requiresCorrectToolForDrops()
                     .noOcclusion())
+            .simpleItem()
             .register();
     public static final BlockEntry<Machines> ENDERIUM_MACHINE = REGISTRATE
             .block("enderium_machine", Machines::new)
@@ -64,6 +68,7 @@ public class ModBlocks {
                     .strength(6)
                     .requiresCorrectToolForDrops()
                     .noOcclusion())
+            .simpleItem()
             .register();
 
     public static final BlockEntry<CasingBlock> ZINC_CASING = REGISTRATE
@@ -75,6 +80,7 @@ public class ModBlocks {
                     .strength(6)
                     .requiresCorrectToolForDrops()
                     .noOcclusion())
+            .simpleItem()
             .register();
     public static final BlockEntry<CasingBlock> INVAR_CASING = REGISTRATE
             .block("invar_casing", CasingBlock::new)
@@ -85,6 +91,7 @@ public class ModBlocks {
                     .strength(6)
                     .requiresCorrectToolForDrops()
                     .noOcclusion())
+            .simpleItem()
             .register();
     public static final BlockEntry<CasingBlock> FLUIX_CASING = REGISTRATE
             .block("fluix_casing", CasingBlock::new)
@@ -95,6 +102,7 @@ public class ModBlocks {
                     .strength(6)
                     .requiresCorrectToolForDrops()
                     .noOcclusion())
+            .simpleItem()
             .register();
     public static final BlockEntry<CasingBlock> ENDERIUM_CASING = REGISTRATE
             .block("enderium_casing", CasingBlock::new)
@@ -105,6 +113,7 @@ public class ModBlocks {
                     .strength(6)
                     .requiresCorrectToolForDrops()
                     .noOcclusion())
+            .simpleItem()
             .register();
 
     static void register() {

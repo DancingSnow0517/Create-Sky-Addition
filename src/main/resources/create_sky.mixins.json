@@ -3,10 +3,7 @@
   "refmap": "create_sky.refmap.json",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "FTBUltimineClientMixin",
-    "FTBUltimineMixin"
   ],
   "client": [
-    "TestMixin"
   ]
 }

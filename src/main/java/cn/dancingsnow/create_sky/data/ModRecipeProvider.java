@@ -25,6 +25,22 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern("AAA")
                 .unlockedBy("has_item", has(ModItems.KINETIC_MECHANISM.get()))
                 .save(consumer);
+        ShapedRecipeBuilder.shaped(ModBlocks.COPPER_MACHINE.get())
+                .pattern("AAA")
+                .pattern("ABA")
+                .pattern("AAA")
+                .define('A', ModItems.SEALED_MECHANISM.get())
+                .define('B', AllBlocks.COPPER_CASING.get())
+                .unlockedBy("has_item", has(ModItems.SEALED_MECHANISM.get()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(ModBlocks.BRASS_MACHINE.get())
+                .pattern("AAA")
+                .pattern("ABA")
+                .pattern("AAA")
+                .define('A', AllItems.PRECISION_MECHANISM.get())
+                .define('B', AllBlocks.BRASS_CASING.get())
+                .unlockedBy("has_item", has(AllItems.PRECISION_MECHANISM.get()))
+                .save(consumer);
     }
 
     private static ResourceLocation modID(String path) {
