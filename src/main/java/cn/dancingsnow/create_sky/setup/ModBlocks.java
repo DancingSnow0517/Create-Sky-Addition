@@ -22,21 +22,17 @@ public class ModBlocks {
 
     public static final BlockEntry<Machines> ANDESITE_MACHINE = REGISTRATE
             .block("andesite_machine", Machines::new)
-            .blockstate((genContext, provider) -> {
-                provider.horizontalBlock(genContext.get(), provider.models().getExistingFile(provider.modLoc("andesite_machine")));
-            })
+            .blockstate((genContext, provider) -> provider.horizontalBlock(genContext.get(), provider.models().getExistingFile(provider.modLoc("andesite_machine"))))
             .tag(ModTags.Blocks.MACHINE)
             .loot(Loots::dropSelf)
-            .recipe((genContext, provider) -> {
-                ShapedRecipeBuilder.shaped(genContext.get())
-                        .pattern("AAA")
-                        .pattern("ABA")
-                        .pattern("AAA")
-                        .define('A', ModItems.KINETIC_MECHANISM.get())
-                        .define('B', AllBlocks.ANDESITE_CASING.get())
-                        .unlockedBy("hasitem", RegistrateRecipeProvider.hasItem(ModItems.KINETIC_MECHANISM.get()))
-                        .save(provider);
-            })
+            .recipe((genContext, provider) -> ShapedRecipeBuilder.shaped(genContext.get())
+                    .pattern("AAA")
+                    .pattern("ABA")
+                    .pattern("AAA")
+                    .define('A', ModItems.KINETIC_MECHANISM.get())
+                    .define('B', AllBlocks.ANDESITE_CASING.get())
+                    .unlockedBy("hasitem", RegistrateRecipeProvider.hasItem(ModItems.KINETIC_MECHANISM.get()))
+                    .save(provider))
             .properties(properties -> properties
                     .sound(SoundType.LANTERN)
                     .harvestLevel(1)
@@ -48,21 +44,17 @@ public class ModBlocks {
             .register();
     public static final BlockEntry<Machines> COPPER_MACHINE = REGISTRATE
             .block("copper_machine", Machines::new)
-            .blockstate((genContext, provider) -> {
-                provider.horizontalBlock(genContext.get(), provider.models().getExistingFile(provider.modLoc("copper_machine")));
-            })
+            .blockstate((genContext, provider) -> provider.horizontalBlock(genContext.get(), provider.models().getExistingFile(provider.modLoc("copper_machine"))))
             .tag(ModTags.Blocks.MACHINE)
             .loot(Loots::dropSelf)
-            .recipe((genContext, provider) -> {
-                ShapedRecipeBuilder.shaped(genContext.get())
-                        .pattern("AAA")
-                        .pattern("ABA")
-                        .pattern("AAA")
-                        .define('A', ModItems.SEALED_MECHANISM.get())
-                        .define('B', AllBlocks.COPPER_CASING.get())
-                        .unlockedBy("hasitem", RegistrateRecipeProvider.hasItem(ModItems.SEALED_MECHANISM.get()))
-                        .save(provider);
-            })
+            .recipe((genContext, provider) -> ShapedRecipeBuilder.shaped(genContext.get())
+                    .pattern("AAA")
+                    .pattern("ABA")
+                    .pattern("AAA")
+                    .define('A', ModItems.SEALED_MECHANISM.get())
+                    .define('B', AllBlocks.COPPER_CASING.get())
+                    .unlockedBy("hasitem", RegistrateRecipeProvider.hasItem(ModItems.SEALED_MECHANISM.get()))
+                    .save(provider))
             .properties(properties -> properties
                     .sound(SoundType.LANTERN)
                     .harvestLevel(2)
@@ -74,21 +66,17 @@ public class ModBlocks {
             .register();
     public static final BlockEntry<Machines> BRASS_MACHINE = REGISTRATE
             .block("brass_machine", Machines::new)
-            .blockstate((genContext, provider) -> {
-                provider.horizontalBlock(genContext.get(), provider.models().getExistingFile(provider.modLoc("brass_machine")));
-            })
+            .blockstate((genContext, provider) -> provider.horizontalBlock(genContext.get(), provider.models().getExistingFile(provider.modLoc("brass_machine"))))
             .tag(ModTags.Blocks.MACHINE)
             .loot(Loots::dropSelf)
-            .recipe((genContext, provider) -> {
-                ShapedRecipeBuilder.shaped(genContext.get())
-                        .pattern("AAA")
-                        .pattern("ABA")
-                        .pattern("AAA")
-                        .define('A', AllItems.PRECISION_MECHANISM.get())
-                        .define('B', AllBlocks.BRASS_CASING.get())
-                        .unlockedBy("hasitem", RegistrateRecipeProvider.hasItem(AllItems.PRECISION_MECHANISM.get()))
-                        .save(provider);
-            })
+            .recipe((genContext, provider) -> ShapedRecipeBuilder.shaped(genContext.get())
+                    .pattern("AAA")
+                    .pattern("ABA")
+                    .pattern("AAA")
+                    .define('A', AllItems.PRECISION_MECHANISM.get())
+                    .define('B', AllBlocks.BRASS_CASING.get())
+                    .unlockedBy("hasitem", RegistrateRecipeProvider.hasItem(AllItems.PRECISION_MECHANISM.get()))
+                    .save(provider))
             .properties(properties -> properties
                     .sound(SoundType.LANTERN)
                     .harvestLevel(2)
@@ -100,21 +88,17 @@ public class ModBlocks {
             .register();
     public static final BlockEntry<Machines> ZINC_MACHINE = REGISTRATE
             .block("zinc_machine", Machines::new)
-            .blockstate((genContext, provider) -> {
-                provider.horizontalBlock(genContext.get(), provider.models().getExistingFile(provider.modLoc("zinc_machine")));
-            })
+            .blockstate((genContext, provider) -> provider.horizontalBlock(genContext.get(), provider.models().getExistingFile(provider.modLoc("zinc_machine"))))
             .tag(ModTags.Blocks.MACHINE)
             .loot(Loots::dropSelf)
-            .recipe((genContext, provider) -> {
-                ShapedRecipeBuilder.shaped(genContext.get())
-                        .pattern("AAA")
-                        .pattern("ABA")
-                        .pattern("AAA")
-                        .define('A', ModItems.INFERNAL_MECHANISM.get())
-                        .define('B', ModBlocks.ZINC_CASING.get())
-                        .unlockedBy("hasitem", RegistrateRecipeProvider.hasItem(ModItems.INFERNAL_MECHANISM.get()))
-                        .save(provider);
-            })
+            .recipe((genContext, provider) -> ShapedRecipeBuilder.shaped(genContext.get())
+                    .pattern("AAA")
+                    .pattern("ABA")
+                    .pattern("AAA")
+                    .define('A', ModItems.INFERNAL_MECHANISM.get())
+                    .define('B', ModBlocks.ZINC_CASING.get())
+                    .unlockedBy("hasitem", RegistrateRecipeProvider.hasItem(ModItems.INFERNAL_MECHANISM.get()))
+                    .save(provider))
             .properties(properties -> properties
                     .sound(SoundType.LANTERN)
                     .harvestLevel(2)
@@ -126,21 +110,17 @@ public class ModBlocks {
             .register();
     public static final BlockEntry<Machines> ENDERIUM_MACHINE = REGISTRATE
             .block("enderium_machine", Machines::new)
-            .blockstate((genContext, provider) -> {
-                provider.horizontalBlock(genContext.get(), provider.models().getExistingFile(provider.modLoc("enderium_machine")));
-            })
+            .blockstate((genContext, provider) -> provider.horizontalBlock(genContext.get(), provider.models().getExistingFile(provider.modLoc("enderium_machine"))))
             .tag(ModTags.Blocks.MACHINE)
             .loot(Loots::dropSelf)
-            .recipe((genContext, provider) -> {
-                ShapedRecipeBuilder.shaped(genContext.get())
-                        .pattern("AAA")
-                        .pattern("ABA")
-                        .pattern("AAA")
-                        .define('A', ModItems.ABSTRUSE_MECHANISM.get())
-                        .define('B', ModBlocks.ENDERIUM_CASING.get())
-                        .unlockedBy("hasitem", RegistrateRecipeProvider.hasItem(ModItems.ABSTRUSE_MECHANISM.get()))
-                        .save(provider);
-            })
+            .recipe((genContext, provider) -> ShapedRecipeBuilder.shaped(genContext.get())
+                    .pattern("AAA")
+                    .pattern("ABA")
+                    .pattern("AAA")
+                    .define('A', ModItems.ABSTRUSE_MECHANISM.get())
+                    .define('B', ModBlocks.ENDERIUM_CASING.get())
+                    .unlockedBy("hasitem", RegistrateRecipeProvider.hasItem(ModItems.ABSTRUSE_MECHANISM.get()))
+                    .save(provider))
             .properties(properties -> properties
                     .sound(SoundType.LANTERN)
                     .harvestLevel(3)
@@ -189,9 +169,7 @@ public class ModBlocks {
     public static final BlockEntry<CasingBlock> ENDERIUM_CASING = REGISTRATE
             .block("enderium_casing", CasingBlock::new)
             .loot(Loots::dropSelf)
-            .blockstate((genContext, provider) -> {
-                provider.simpleBlock(genContext.get(), provider.models().getExistingFile(provider.modLoc("enderium_casing")));
-            })
+            .blockstate((genContext, provider) -> provider.simpleBlock(genContext.get(), provider.models().getExistingFile(provider.modLoc("enderium_casing"))))
             .properties(properties -> properties
                     .sound(SoundType.METAL)
                     .harvestLevel(2)
