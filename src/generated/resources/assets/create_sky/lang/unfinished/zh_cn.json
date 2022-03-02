@@ -1,0 +1,114 @@
+{
+	"_": "Missing Localizations: 13",
+
+	"_": "->------------------------]  Game Elements  [------------------------<-",
+
+	"block.create_sky.andesite_machine": "安山岩机械装置",
+	"block.create_sky.brass_machine": "黄铜机械装置",
+	"block.create_sky.copper_machine": "铜制机械装置",
+	"block.create_sky.enderium_casing": "末影框架",
+	"block.create_sky.enderium_machine": "末影机械装置",
+	"block.create_sky.fluix_casing": "福鲁伊克斯框架",
+	"block.create_sky.invar_casing": "殷钢框架",
+	"block.create_sky.zinc_casing": "锌制框架",
+	"block.create_sky.zinc_machine": "锌制机械装置",
+
+	"item.create_sky.abstruse_mechanism": "精湛构件",
+	"item.create_sky.ash": "灰烬",
+	"item.create_sky.calculation_mechanism": "运算构件",
+	"item.create_sky.charged_calculator": "UNLOCALIZED: Charged Calculator",
+	"item.create_sky.computation_matrix": "计算矩阵",
+	"item.create_sky.divide": "÷",
+	"item.create_sky.eight": "8",
+	"item.create_sky.five": "5",
+	"item.create_sky.four": "4",
+	"item.create_sky.incomplete_calculation_mechanism": "运算构件（半成品）",
+	"item.create_sky.incomplete_inductive_mechanism": "感应构件（半成品）",
+	"item.create_sky.incomplete_infernal_mechanism": "下届构件（半成品）",
+	"item.create_sky.incomplete_kinetic_mechanism": "动力构件（半成品）",
+	"item.create_sky.inductive_mechanism": "感应构件",
+	"item.create_sky.infernal_mechanism": "下届构件",
+	"item.create_sky.kinetic_mechanism": "动力构件",
+	"item.create_sky.minus": "-",
+	"item.create_sky.missingno": "∄",
+	"item.create_sky.multiply": "×",
+	"item.create_sky.nine": "9",
+	"item.create_sky.one": "1",
+	"item.create_sky.plus": "+",
+	"item.create_sky.sealed_mechanism": "密封构件",
+	"item.create_sky.seven": "7",
+	"item.create_sky.six": "6",
+	"item.create_sky.three": "3",
+	"item.create_sky.two": "2",
+	"item.create_sky.zero": "0",
+
+
+	"_": "->------------------------]  Advancements  [------------------------<-",
+
+	"advancement.create_sky.root": "开始CreateSky",
+	"advancement.create_sky.root.desc": "开始你的 Create Sky 之旅",
+
+
+	"_": "->------------------------]  UI & Messages  [------------------------<-",
+
+
+
+	"_": "->------------------------]  Item Descriptions  [------------------------<-",
+
+	"item.create_sky.mechanisms.suggestion": "§7建议自动化生产",
+	"item.create_sky.tooltip.kinetic_mechanism": "§6章节 1",
+	"item.create_sky.tooltip.incomplete_kinetic_mechanism": "§6章节 1",
+	"item.create_sky.tooltip.sealed_mechanism": "§6章节 1A",
+	"item.create_sky.tooltip.infernal_mechanism": "§6章节 2A",
+	"item.create_sky.tooltip.incomplete_infernal_mechanism": "§6章节 2A",
+	"item.create_sky.tooltip.inductive_mechanism": "§6章节 3",
+	"item.create_sky.tooltip.incomplete_inductive_mechanism": "§6章节 3",
+	"item.create_sky.tooltip.abstruse_mechanism": "§6章节 3A",
+	"item.create_sky.tooltip.calculation_mechanism": "§6章节 4",
+	"item.create_sky.tooltip.incomplete_calculation_mechanism": "§6章节 4",
+
+
+	"_": "->------------------------]  Fluids  [------------------------<-",
+
+	"item.create_sky.logic_bucket": "液态逻辑桶（未加工）",
+	"item.create_sky.matrix_bucket": "液态计算矩阵桶",
+	"item.create_sky.number_0_bucket": "液态逻辑(0)桶",
+	"item.create_sky.number_1_bucket": "液态逻辑(1)桶",
+	"item.create_sky.number_2_bucket": "液态逻辑(2)桶",
+	"item.create_sky.number_3_bucket": "液态逻辑(3)桶",
+	"item.create_sky.number_4_bucket": "液态逻辑(4)桶",
+	"item.create_sky.number_5_bucket": "液态逻辑(5)桶",
+	"item.create_sky.number_6_bucket": "液态逻辑(6)桶",
+	"item.create_sky.number_7_bucket": "液态逻辑(7)桶",
+	"item.create_sky.number_8_bucket": "液态逻辑(8)桶",
+	"item.create_sky.number_9_bucket": "液态逻辑(9)桶",
+
+	"block.create_sky.logic": "液态逻辑（未加工）",
+	"block.create_sky.matrix": "液态计算矩阵",
+	"block.create_sky.number_0": "液态逻辑(0)",
+	"block.create_sky.number_1": "液态逻辑(1)",
+	"block.create_sky.number_2": "液态逻辑(2)",
+	"block.create_sky.number_3": "液态逻辑(3)",
+	"block.create_sky.number_4": "液态逻辑(4)",
+	"block.create_sky.number_5": "液态逻辑(5)",
+	"block.create_sky.number_6": "液态逻辑(6)",
+	"block.create_sky.number_7": "液态逻辑(7)",
+	"block.create_sky.number_8": "液态逻辑(8)",
+	"block.create_sky.number_9": "液态逻辑(9)",
+
+	"fluid.create_sky.logic_fluid": "UNLOCALIZED: Liquified Logic (Unprocessed)",
+	"fluid.create_sky.matrix": "UNLOCALIZED: Liquified Computation Matrix",
+	"fluid.create_sky.number_0": "UNLOCALIZED: Liquified Logic (0)",
+	"fluid.create_sky.number_1": "UNLOCALIZED: Liquified Logic (1)",
+	"fluid.create_sky.number_2": "UNLOCALIZED: Liquified Logic (2)",
+	"fluid.create_sky.number_3": "UNLOCALIZED: Liquified Logic (3)",
+	"fluid.create_sky.number_4": "UNLOCALIZED: Liquified Logic (4)",
+	"fluid.create_sky.number_5": "UNLOCALIZED: Liquified Logic (5)",
+	"fluid.create_sky.number_6": "UNLOCALIZED: Liquified Logic (6)",
+	"fluid.create_sky.number_7": "UNLOCALIZED: Liquified Logic (7)",
+	"fluid.create_sky.number_8": "UNLOCALIZED: Liquified Logic (8)",
+	"fluid.create_sky.number_9": "UNLOCALIZED: Liquified Logic (9)",
+
+	"_": "Thank you for translating Create!"
+
+}

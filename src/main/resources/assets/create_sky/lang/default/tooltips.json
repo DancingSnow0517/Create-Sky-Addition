@@ -1,5 +1,5 @@
 {
-  "item.create_sky.suggestion.mechanisms": "§7建议自动化生产",
+  "item.create_sky.mechanisms.suggestion": "§7建议自动化生产",
 
   "item.create_sky.tooltip.kinetic_mechanism": "§6章节 1",
   "item.create_sky.tooltip.incomplete_kinetic_mechanism": "§6章节 1",

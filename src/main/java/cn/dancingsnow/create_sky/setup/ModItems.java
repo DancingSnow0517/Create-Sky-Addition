@@ -32,6 +32,7 @@ public class ModItems {
     public static final ItemEntry<Item> ASH = REGISTRATE.item("ash", Item::new).register();
     public static final ItemEntry<Item> COMPUTATION_MATRIX = REGISTRATE
             .item("computation_matrix", Item::new)
+            .model((genContext, provider) -> {})
             .properties(properties -> properties
                     .stacksTo(1)
                     .rarity(Rarity.EPIC))
@@ -126,18 +127,21 @@ public class ModItems {
         TranslationTextComponent textComponent = new TranslationTextComponent(String.format(TOOLTIPS, reg_id));
         return REGISTRATE
                 .item(reg_id, p -> new Mechanisms(p, textComponent, suggestion))
+                .tag(ModTags.Items.MECHANISMS)
                 .register();
     }
 
     private static ItemEntry<SequencedAssemblyItem> getMechanismsNotab(String reg_id) {
         return REGISTRATE
                 .item(reg_id, SequencedAssemblyItem::new)
+                .tag(ModTags.Items.INCOMPLETES)
                 .register();
     }
 
     private static ItemEntry<Numbers> getNumbers(String reg_id) {
         return REGISTRATE
                 .item(reg_id, Numbers::new)
+                .tag(ModTags.Items.NUMBERS)
                 .properties(properties -> properties.stacksTo(64))
                 .register();
     }

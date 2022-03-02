@@ -17,6 +17,9 @@ public class ModBlocks {
 
     public static final BlockEntry<Machines> ANDESITE_MACHINE = REGISTRATE
             .block("andesite_machine", Machines::new)
+            .blockstate((genContext, provider) -> {
+                provider.horizontalBlock(genContext.get(), provider.models().getExistingFile(provider.modLoc("andesite_machine")));
+            })
             .properties(properties -> properties
                     .sound(SoundType.LANTERN)
                     .harvestLevel(1)
@@ -28,6 +31,9 @@ public class ModBlocks {
             .register();
     public static final BlockEntry<Machines> COPPER_MACHINE = REGISTRATE
             .block("copper_machine", Machines::new)
+            .blockstate((genContext, provider) -> {
+                provider.horizontalBlock(genContext.get(), provider.models().getExistingFile(provider.modLoc("copper_machine")));
+            })
             .properties(properties -> properties
                     .sound(SoundType.LANTERN)
                     .harvestLevel(2)
@@ -39,6 +45,9 @@ public class ModBlocks {
             .register();
     public static final BlockEntry<Machines> BRASS_MACHINE = REGISTRATE
             .block("brass_machine", Machines::new)
+            .blockstate((genContext, provider) -> {
+                provider.horizontalBlock(genContext.get(), provider.models().getExistingFile(provider.modLoc("brass_machine")));
+            })
             .properties(properties -> properties
                     .sound(SoundType.LANTERN)
                     .harvestLevel(2)
@@ -50,6 +59,9 @@ public class ModBlocks {
             .register();
     public static final BlockEntry<Machines> ZINC_MACHINE = REGISTRATE
             .block("zinc_machine", Machines::new)
+            .blockstate((genContext, provider) -> {
+                provider.horizontalBlock(genContext.get(), provider.models().getExistingFile(provider.modLoc("zinc_machine")));
+            })
             .properties(properties -> properties
                     .sound(SoundType.LANTERN)
                     .harvestLevel(2)
@@ -61,6 +73,9 @@ public class ModBlocks {
             .register();
     public static final BlockEntry<Machines> ENDERIUM_MACHINE = REGISTRATE
             .block("enderium_machine", Machines::new)
+            .blockstate((genContext, provider) -> {
+                provider.horizontalBlock(genContext.get(), provider.models().getExistingFile(provider.modLoc("enderium_machine")));
+            })
             .properties(properties -> properties
                     .sound(SoundType.LANTERN)
                     .harvestLevel(3)
@@ -106,6 +121,9 @@ public class ModBlocks {
             .register();
     public static final BlockEntry<CasingBlock> ENDERIUM_CASING = REGISTRATE
             .block("enderium_casing", CasingBlock::new)
+            .blockstate((genContext, provider) -> {
+                provider.simpleBlock(genContext.get(), provider.models().getExistingFile(provider.modLoc("enderium_casing")));
+            })
             .properties(properties -> properties
                     .sound(SoundType.METAL)
                     .harvestLevel(2)
@@ -114,6 +132,7 @@ public class ModBlocks {
                     .requiresCorrectToolForDrops()
                     .noOcclusion())
             .simpleItem()
+            .loot((registrateBlockLootTables, casingBlock) -> registrateBlockLootTables.dropSelf(casingBlock.getBlock()))
             .register();
 
     static void register() {

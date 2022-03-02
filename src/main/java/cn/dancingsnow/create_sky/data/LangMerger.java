@@ -1,7 +1,6 @@
-package cn.dancingsnow.create_sky.data.client;
+package cn.dancingsnow.create_sky.data;
 
 import cn.dancingsnow.create_sky.CreateSky;
-import cn.dancingsnow.create_sky.data.AllLangPartials;
 import cn.dancingsnow.create_sky.data.utility.FilesHelper;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -20,7 +19,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.*;
-import java.util.concurrent.atomic.AtomicBoolean;
+
 
 public class LangMerger implements IDataProvider {
     private static final Gson GSON = (new GsonBuilder()).setPrettyPrinting()
@@ -34,7 +33,6 @@ public class LangMerger implements IDataProvider {
     private Map<String, List<Object>> populatedLangData;
     private Map<String, Map<String, String>> allLocalizedEntries;
     private Map<String, MutableInt> missingTranslationTally;
-    private Map<String, Map<String, String>> allLangPartials;
 
     private List<String> langIgnore;
 
@@ -45,7 +43,6 @@ public class LangMerger implements IDataProvider {
         this.allLocalizedEntries = new HashMap<>();
         this.populatedLangData = new HashMap<>();
         this.missingTranslationTally = new HashMap<>();
-        this.allLangPartials = new HashMap<>();
         populateLangIgnore();
     }
 
@@ -70,7 +67,7 @@ public class LangMerger implements IDataProvider {
     @Override
     public void run(DirectoryCache cache) throws IOException {
         Path path = this.gen.getOutputFolder()
-                .resolve("assets/" + CreateSky.MOD_ID + "/lang/" + "zh_cn.json");
+                .resolve("assets/" + CreateSky.MOD_ID + "/lang/" + "en_us.json");
 
         for (Pair<String, JsonElement> pair : getAllLocalizationFiles()) {
             if (!pair.getRight()
@@ -95,25 +92,24 @@ public class LangMerger implements IDataProvider {
             missingTranslationTally.put(key, new MutableInt(0));
         }
 
-        collectAllPartials();
         collectExistingEntries(path);
         collectEntries();
         if (mergedLangData.isEmpty())
             return;
 
-        save(cache, mergedLangData, -1, path, "合并 zh_cn.json 带有手写的语言条目...");
+        save(cache, mergedLangData, -1, path, "Merging en_us.json with hand-written lang entries...");
         for (Map.Entry<String, List<Object>> localization : populatedLangData.entrySet()) {
             String key = localization.getKey();
             Path populatedLangPath = this.gen.getOutputFolder()
                     .resolve("assets/" + CreateSky.MOD_ID + "/lang/unfinished/" + key);
             save(cache, localization.getValue(), missingTranslationTally.get(key)
-                    .intValue(), populatedLangPath, "缺少 " + key + " 条目, 正在填充...");
+                    .intValue(), populatedLangPath, "Populating " + key + " with missing entries...");
         }
     }
 
     private void collectExistingEntries(Path path) throws IOException {
         if (!Files.exists(path)) {
-            CreateSky.LOGGER.warn("没有什么可以合并的！ 在我之前似乎没有生成任何语言。");
+            CreateSky.LOGGER.warn("Nothing to merge! It appears no lang was generated before me.");
             return;
         }
 
@@ -134,7 +130,6 @@ public class LangMerger implements IDataProvider {
         writeData("\n\n");
 
         MutableObject<String> previousKey = new MutableObject<>("");
-        String finalHeader = header;
         jsonobject.entrySet()
                 .stream()
                 .forEachOrdered(entry -> {
@@ -143,8 +138,6 @@ public class LangMerger implements IDataProvider {
                         return;
                     String value = entry.getValue()
                             .getAsString();
-                    if (value.equals("感谢你翻译 Create Sky Addition!"))
-                        return;
                     if (!previousKey.getValue()
                             .isEmpty() && shouldAddLineBreak(key, previousKey.getValue()))
                         writeData("\n");
@@ -176,6 +169,8 @@ public class LangMerger implements IDataProvider {
         // Always put tooltips and ponder scenes in their own paragraphs
         if (key.endsWith(".tooltip"))
             return true;
+        if (key.startsWith("create.ponder"))
+            return true;
 
         key = key.replaceFirst("\\.", "");
         previousKey = previousKey.replaceFirst("\\.", "");
@@ -203,7 +198,7 @@ public class LangMerger implements IDataProvider {
                     break;
                 if (!readLine.endsWith(".json"))
                     continue;
-                if (readLine.startsWith("zh_cn") || readLine.startsWith("en_ud"))
+                if (readLine.startsWith("en_us") || readLine.startsWith("en_ud"))
                     continue;
                 list.add(Pair.of(readLine, FilesHelper.loadJsonResource(filepath + "/" + readLine)));
             }
@@ -219,30 +214,6 @@ public class LangMerger implements IDataProvider {
         for (AllLangPartials partial : AllLangPartials.values())
             addAll(partial.getDisplay(), partial.provide()
                     .getAsJsonObject());
-
-    }
-
-    private void collectAllPartials() {
-        JsonObject jsonObject;
-        for (AllLangPartials partial : AllLangPartials.values()) {
-            Map<String, String> map = new HashMap<>();
-            jsonObject = partial.provide().getAsJsonObject();
-            jsonObject.entrySet().stream().forEachOrdered(entry -> {
-                String key = entry.getKey();
-                String value = entry.getValue().getAsString();
-                map.put(key, value);
-            });
-            allLangPartials.put(partial.getDisplay(), map);
-        }
-    }
-
-    private boolean isInLangPartials(String key){
-        AtomicBoolean rt = new AtomicBoolean(false);
-        allLangPartials.forEach((s, stringStringMap) -> {
-            if (stringStringMap.containsKey(key))
-                rt.set(true);
-        });
-        return rt.get();
     }
 
     private void save(DirectoryCache cache, List<Object> dataIn, int missingKeys, Path target, String message)
@@ -269,9 +240,9 @@ public class LangMerger implements IDataProvider {
         StringBuilder builder = new StringBuilder();
         builder.append("{\n");
         if (missingKeys != -1)
-            builder.append("\t\"_\": \"缺少的条目: " + missingKeys + "\",\n");
+            builder.append("\t\"_\": \"Missing Localizations: " + missingKeys + "\",\n");
         data.forEach(builder::append);
-        builder.append("\t\"_\": \"感谢你翻译 Create Sky Addition!\"\n\n");
+        builder.append("\t\"_\": \"Thank you for translating Create!\"\n\n");
         builder.append("}");
         return builder.toString();
     }
@@ -299,7 +270,7 @@ public class LangMerger implements IDataProvider {
         private boolean missing;
 
         ForeignLangEntry(String key, String value, Map<String, String> localizationMap) {
-            super(key, localizationMap.getOrDefault(key, "未本地化: " + value));
+            super(key, localizationMap.getOrDefault(key, "UNLOCALIZED: " + value));
             missing = !localizationMap.containsKey(key);
         }
 

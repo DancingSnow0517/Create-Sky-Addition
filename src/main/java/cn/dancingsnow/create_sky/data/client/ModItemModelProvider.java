@@ -15,49 +15,49 @@ public class ModItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
 
-        withExistingParent("andesite_machine", modLoc("block/andesite_machine"));
-        withExistingParent("copper_machine", modLoc("block/copper_machine"));
-        withExistingParent("brass_machine", modLoc("block/brass_machine"));
-        withExistingParent("zinc_machine", modLoc("block/zinc_machine"));
-        withExistingParent("enderium_machine", modLoc("block/enderium_machine"));
-        withExistingParent("zinc_casing", modLoc("block/zinc_casing"));
-        withExistingParent("invar_casing", modLoc("block/invar_casing"));
-        withExistingParent("fluix_casing", modLoc("block/fluix_casing"));
-        withExistingParent("enderium_casing", modLoc("block/enderium_casing"));
+//        withExistingParent("andesite_machine", modLoc("block/andesite_machine"));
+//        withExistingParent("copper_machine", modLoc("block/copper_machine"));
+//        withExistingParent("brass_machine", modLoc("block/brass_machine"));
+//        withExistingParent("zinc_machine", modLoc("block/zinc_machine"));
+//        withExistingParent("enderium_machine", modLoc("block/enderium_machine"));
+//        withExistingParent("zinc_casing", modLoc("block/zinc_casing"));
+//        withExistingParent("invar_casing", modLoc("block/invar_casing"));
+//        withExistingParent("fluix_casing", modLoc("block/fluix_casing"));
+//        withExistingParent("enderium_casing", modLoc("block/enderium_casing"));
 
         ModelFile itemGenerated = getExistingFile(mcLoc("item/generated"));
 
-        builder(itemGenerated, "kinetic_mechanism");
-        builder(itemGenerated, "sealed_mechanism");
-        builder(itemGenerated, "infernal_mechanism");
-        builder(itemGenerated, "inductive_mechanism");
-        builder(itemGenerated, "abstruse_mechanism");
-        builder(itemGenerated, "calculation_mechanism");
-
-        builder(itemGenerated, "incomplete_kinetic_mechanism");
-        builder(itemGenerated, "incomplete_infernal_mechanism");
-        builder(itemGenerated, "incomplete_inductive_mechanism");
-        builder(itemGenerated, "incomplete_calculation_mechanism");
-
-        builder(itemGenerated, "ash");
-
-        builder(itemGenerated, "zero");
-        builder(itemGenerated, "one");
-        builder(itemGenerated, "two");
-        builder(itemGenerated, "three");
-        builder(itemGenerated, "four");
-        builder(itemGenerated, "five");
-        builder(itemGenerated, "six");
-        builder(itemGenerated, "seven");
-        builder(itemGenerated, "eight");
-        builder(itemGenerated, "nine");
-        builder(itemGenerated, "plus");
-        builder(itemGenerated, "minus");
-        builder(itemGenerated, "multiply");
-        builder(itemGenerated, "divide");
-        builder(itemGenerated, "missingno");
-
-        builder(itemGenerated, "charged_calculator");
+//        builder(itemGenerated, "kinetic_mechanism");
+//        builder(itemGenerated, "sealed_mechanism");
+//        builder(itemGenerated, "infernal_mechanism");
+//        builder(itemGenerated, "inductive_mechanism");
+//        builder(itemGenerated, "abstruse_mechanism");
+//        builder(itemGenerated, "calculation_mechanism");
+//
+//        builder(itemGenerated, "incomplete_kinetic_mechanism");
+//        builder(itemGenerated, "incomplete_infernal_mechanism");
+//        builder(itemGenerated, "incomplete_inductive_mechanism");
+//        builder(itemGenerated, "incomplete_calculation_mechanism");
+//
+//        builder(itemGenerated, "ash");
+//
+//        builder(itemGenerated, "zero");
+//        builder(itemGenerated, "one");
+//        builder(itemGenerated, "two");
+//        builder(itemGenerated, "three");
+//        builder(itemGenerated, "four");
+//        builder(itemGenerated, "five");
+//        builder(itemGenerated, "six");
+//        builder(itemGenerated, "seven");
+//        builder(itemGenerated, "eight");
+//        builder(itemGenerated, "nine");
+//        builder(itemGenerated, "plus");
+//        builder(itemGenerated, "minus");
+//        builder(itemGenerated, "multiply");
+//        builder(itemGenerated, "divide");
+//        builder(itemGenerated, "missingno");
+//
+//        builder(itemGenerated, "charged_calculator");
 
         bucket_builder(itemGenerated, "logic_bucket");
         bucket_builder(itemGenerated, "number_0_bucket");
