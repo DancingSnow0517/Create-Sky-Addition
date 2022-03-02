@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "ABA",
+    "AAA"
+  ],
+  "key": {
+    "A": {
+      "item": "create_sky:abstruse_mechanism"
+    },
+    "B": {
+      "item": "create_sky:enderium_casing"
+    }
+  },
+  "result": {
+    "item": "create_sky:enderium_machine"
+  }
+}

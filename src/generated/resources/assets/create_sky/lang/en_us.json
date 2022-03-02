@@ -12,6 +12,8 @@
 	"block.create_sky.zinc_casing": "Zinc Casing",
 	"block.create_sky.zinc_machine": "Zinc Machine",
 
+	"enchantment.create_sky.vein_upgrade": "Vine Upgrade",
+
 	"item.create_sky.abstruse_mechanism": "Abstruse Mechanism",
 	"item.create_sky.ash": "Ash",
 	"item.create_sky.calculation_mechanism": "Calculation Mechanism",
@@ -54,17 +56,17 @@
 
 	"_": "->------------------------]  Item Descriptions  [------------------------<-",
 
-	"item.create_sky.mechanisms.suggestion": "§7建议自动化生产",
-	"item.create_sky.tooltip.kinetic_mechanism": "§6章节 1",
-	"item.create_sky.tooltip.incomplete_kinetic_mechanism": "§6章节 1",
-	"item.create_sky.tooltip.sealed_mechanism": "§6章节 1A",
-	"item.create_sky.tooltip.infernal_mechanism": "§6章节 2A",
-	"item.create_sky.tooltip.incomplete_infernal_mechanism": "§6章节 2A",
-	"item.create_sky.tooltip.inductive_mechanism": "§6章节 3",
-	"item.create_sky.tooltip.incomplete_inductive_mechanism": "§6章节 3",
-	"item.create_sky.tooltip.abstruse_mechanism": "§6章节 3A",
-	"item.create_sky.tooltip.calculation_mechanism": "§6章节 4",
-	"item.create_sky.tooltip.incomplete_calculation_mechanism": "§6章节 4",
+	"item.create_sky.mechanisms.suggestion": "§7Suggest automated production",
+	"item.create_sky.tooltip.kinetic_mechanism": "§6Tier 1",
+	"item.create_sky.tooltip.incomplete_kinetic_mechanism": "§6Tier 1",
+	"item.create_sky.tooltip.sealed_mechanism": "§6Tier 1A",
+	"item.create_sky.tooltip.infernal_mechanism": "§6Tier 2A",
+	"item.create_sky.tooltip.incomplete_infernal_mechanism": "§6Tier 2A",
+	"item.create_sky.tooltip.inductive_mechanism": "§6Tier 3",
+	"item.create_sky.tooltip.incomplete_inductive_mechanism": "§6Tier 3",
+	"item.create_sky.tooltip.abstruse_mechanism": "§6Tier 3A",
+	"item.create_sky.tooltip.calculation_mechanism": "§6Tier 4",
+	"item.create_sky.tooltip.incomplete_calculation_mechanism": "§6Tier 4",
 
 
 	"_": "->------------------------]  Fluids  [------------------------<-",
@@ -95,18 +97,18 @@
 	"block.create_sky.number_8": "Liquified Logic (8)",
 	"block.create_sky.number_9": "Liquified Logic (9)",
 
-	"fluid.create_sky.logic": "Liquified Logic (Unprocessed)",
-	"fluid.create_sky.matrix": "Liquified Computation Matrix",
-	"fluid.create_sky.number_0": "Liquified Logic (0)",
-	"fluid.create_sky.number_1": "Liquified Logic (1)",
-	"fluid.create_sky.number_2": "Liquified Logic (2)",
-	"fluid.create_sky.number_3": "Liquified Logic (3)",
-	"fluid.create_sky.number_4": "Liquified Logic (4)",
-	"fluid.create_sky.number_5": "Liquified Logic (5)",
-	"fluid.create_sky.number_6": "Liquified Logic (6)",
-	"fluid.create_sky.number_7": "Liquified Logic (7)",
-	"fluid.create_sky.number_8": "Liquified Logic (8)",
-	"fluid.create_sky.number_9": "Liquified Logic (9)",
+	"fluid.create_sky.logic_fluid": "Liquified Logic (Unprocessed)",
+	"fluid.create_sky.matrix_fluid": "Liquified Computation Matrix",
+	"fluid.create_sky.number_0_fluid": "Liquified Logic (0)",
+	"fluid.create_sky.number_1_fluid": "Liquified Logic (1)",
+	"fluid.create_sky.number_2_fluid": "Liquified Logic (2)",
+	"fluid.create_sky.number_3_fluid": "Liquified Logic (3)",
+	"fluid.create_sky.number_4_fluid": "Liquified Logic (4)",
+	"fluid.create_sky.number_5_fluid": "Liquified Logic (5)",
+	"fluid.create_sky.number_6_fluid": "Liquified Logic (6)",
+	"fluid.create_sky.number_7_fluid": "Liquified Logic (7)",
+	"fluid.create_sky.number_8_fluid": "Liquified Logic (8)",
+	"fluid.create_sky.number_9_fluid": "Liquified Logic (9)",
 
 	"_": "Thank you for translating Create!"
 

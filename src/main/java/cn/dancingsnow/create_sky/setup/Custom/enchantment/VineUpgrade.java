@@ -6,9 +6,11 @@ import net.minecraft.inventory.EquipmentSlotType;
 
 public class VineUpgrade extends Enchantment {
 
-    public VineUpgrade(Rarity rarity, EquipmentSlotType... equipmentSlotTypes) {
-        super(rarity, EnchantmentType.DIGGER, equipmentSlotTypes);
+    public VineUpgrade(Rarity rarity, EnchantmentType enchantmentType, EquipmentSlotType... equipmentSlotTypes) {
+        super(rarity, enchantmentType, equipmentSlotTypes);
     }
+
+
 
     @Override
     public int getMinLevel() {

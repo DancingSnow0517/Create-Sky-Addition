@@ -1,5 +1,5 @@
 {
-	"_": "Missing Localizations: 13",
+	"_": "Missing Localizations: 1",
 
 	"_": "->------------------------]  Game Elements  [------------------------<-",
 
@@ -12,6 +12,8 @@
 	"block.create_sky.invar_casing": "殷钢框架",
 	"block.create_sky.zinc_casing": "锌制框架",
 	"block.create_sky.zinc_machine": "锌制机械装置",
+
+	"enchantment.create_sky.vein_upgrade": "连锁升级",
 
 	"item.create_sky.abstruse_mechanism": "精湛构件",
 	"item.create_sky.ash": "灰烬",
@@ -96,18 +98,18 @@
 	"block.create_sky.number_8": "液态逻辑(8)",
 	"block.create_sky.number_9": "液态逻辑(9)",
 
-	"fluid.create_sky.logic_fluid": "UNLOCALIZED: Liquified Logic (Unprocessed)",
-	"fluid.create_sky.matrix": "UNLOCALIZED: Liquified Computation Matrix",
-	"fluid.create_sky.number_0": "UNLOCALIZED: Liquified Logic (0)",
-	"fluid.create_sky.number_1": "UNLOCALIZED: Liquified Logic (1)",
-	"fluid.create_sky.number_2": "UNLOCALIZED: Liquified Logic (2)",
-	"fluid.create_sky.number_3": "UNLOCALIZED: Liquified Logic (3)",
-	"fluid.create_sky.number_4": "UNLOCALIZED: Liquified Logic (4)",
-	"fluid.create_sky.number_5": "UNLOCALIZED: Liquified Logic (5)",
-	"fluid.create_sky.number_6": "UNLOCALIZED: Liquified Logic (6)",
-	"fluid.create_sky.number_7": "UNLOCALIZED: Liquified Logic (7)",
-	"fluid.create_sky.number_8": "UNLOCALIZED: Liquified Logic (8)",
-	"fluid.create_sky.number_9": "UNLOCALIZED: Liquified Logic (9)",
+	"fluid.create_sky.logic_fluid": "液态逻辑（未加工）",
+	"fluid.create_sky.matrix_fluid": "液态计算矩阵",
+	"fluid.create_sky.number_0_fluid": "液态逻辑(0)",
+	"fluid.create_sky.number_1_fluid": "液态逻辑(1)",
+	"fluid.create_sky.number_2_fluid": "液态逻辑(2)",
+	"fluid.create_sky.number_3_fluid": "液态逻辑(3)",
+	"fluid.create_sky.number_4_fluid": "液态逻辑(4)",
+	"fluid.create_sky.number_5_fluid": "液态逻辑(5)",
+	"fluid.create_sky.number_6_fluid": "液态逻辑(6)",
+	"fluid.create_sky.number_7_fluid": "液态逻辑(7)",
+	"fluid.create_sky.number_8_fluid": "液态逻辑(8)",
+	"fluid.create_sky.number_9_fluid": "液态逻辑(9)",
 
 	"_": "Thank you for translating Create!"
 

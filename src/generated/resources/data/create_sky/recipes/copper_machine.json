@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "ABA",
+    "AAA"
+  ],
+  "key": {
+    "A": {
+      "item": "create_sky:sealed_mechanism"
+    },
+    "B": {
+      "item": "create:copper_casing"
+    }
+  },
+  "result": {
+    "item": "create_sky:copper_machine"
+  }
+}

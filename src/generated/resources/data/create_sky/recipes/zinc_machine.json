@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "ABA",
+    "AAA"
+  ],
+  "key": {
+    "A": {
+      "item": "create_sky:infernal_mechanism"
+    },
+    "B": {
+      "item": "create_sky:zinc_casing"
+    }
+  },
+  "result": {
+    "item": "create_sky:zinc_machine"
+  }
+}

@@ -20,6 +20,8 @@ public class ModFluidTagsProvider extends FluidTagsProvider {
     @Override
     protected void addTags() {
 
+        tag(ModTags.Fluids.FLUIDS).add(ModFluids.FLOWING_LOGIC.get());
+        tag(FluidTags.WATER).add(ModFluids.FLOWING_LOGIC.get());
         tag(ModTags.Fluids.FLUIDS).add(ModFluids.FLOWING_NUMBER_0.get());
         tag(FluidTags.WATER).add(ModFluids.FLOWING_NUMBER_0.get());
         tag(ModTags.Fluids.FLUIDS).add(ModFluids.FLOWING_NUMBER_1.get());
