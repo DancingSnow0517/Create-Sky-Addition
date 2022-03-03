@@ -145,21 +145,21 @@ dependencies {
     implementation fg.deobf("curse.maven:thermal-foundation-222880:${thermal_file}")
     implementation fg.deobf("curse.maven:ctm-267602:${ctm_file}")
     // implementation fg.deobf("curse.maven:applied-energistics-2-223794:${ae2_file}")
-    // implementation fg.deobf("curse.maven:ftb-ultimine-forge-386134:${ultimine_file}")
-    // implementation fg.deobf("curse.maven:ftb-library-forge-404465:${ftblibrary_file}")
-    // implementation fg.deobf("curse.maven:architectury-forge-419699:${architectury_file}")
+    implementation fg.deobf("curse.maven:ftb-ultimine-forge-386134:${ultimine_file}")
+    implementation fg.deobf("curse.maven:ftb-library-forge-404465:${ftblibrary_file}")
+    implementation fg.deobf("curse.maven:architectury-forge-419699:${architectury_file}")
 
 }
 jar {
     manifest {
         attributes([
-            "Specification-Title": "create_sky",
-            "Specification-Vendor": "create_skysareus",
-            "Specification-Version": "1", // We are version 1 of ourselves
-            "Implementation-Title": project.name,
-            "Implementation-Version": "${version}",
-            "Implementation-Vendor" :"create_skysareus",
-            "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+                "Specification-Title"     : "create_sky",
+                "Specification-Vendor"    : "create_skysareus",
+                "Specification-Version"   : "1", // We are version 1 of ourselves
+                "Implementation-Title"    : project.name,
+                "Implementation-Version"  : "${version}",
+                "Implementation-Vendor"   : "create_skysareus",
+                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         ])
     }
 }
