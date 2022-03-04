@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "create_sky:item/bucket/number_0_bucket"
+    "layer0": "create_sky:item/number_0_bucket"
   }
 }

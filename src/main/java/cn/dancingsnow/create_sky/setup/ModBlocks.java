@@ -40,7 +40,9 @@ public class ModBlocks {
                     .strength(6)
                     .requiresCorrectToolForDrops()
                     .noOcclusion())
-            .simpleItem()
+            .item()
+            .tag(ModTags.Items.MACHINE)
+            .build()
             .register();
     public static final BlockEntry<Machines> COPPER_MACHINE = REGISTRATE
             .block("copper_machine", Machines::new)
@@ -62,7 +64,9 @@ public class ModBlocks {
                     .strength(6)
                     .requiresCorrectToolForDrops()
                     .noOcclusion())
-            .simpleItem()
+            .item()
+            .tag(ModTags.Items.MACHINE)
+            .build()
             .register();
     public static final BlockEntry<Machines> BRASS_MACHINE = REGISTRATE
             .block("brass_machine", Machines::new)
@@ -84,7 +88,9 @@ public class ModBlocks {
                     .strength(6)
                     .requiresCorrectToolForDrops()
                     .noOcclusion())
-            .simpleItem()
+            .item()
+            .tag(ModTags.Items.MACHINE)
+            .build()
             .register();
     public static final BlockEntry<Machines> ZINC_MACHINE = REGISTRATE
             .block("zinc_machine", Machines::new)
@@ -106,7 +112,9 @@ public class ModBlocks {
                     .strength(6)
                     .requiresCorrectToolForDrops()
                     .noOcclusion())
-            .simpleItem()
+            .item()
+            .tag(ModTags.Items.MACHINE)
+            .build()
             .register();
     public static final BlockEntry<Machines> ENDERIUM_MACHINE = REGISTRATE
             .block("enderium_machine", Machines::new)
@@ -128,7 +136,9 @@ public class ModBlocks {
                     .strength(6)
                     .requiresCorrectToolForDrops()
                     .noOcclusion())
-            .simpleItem()
+            .item()
+            .tag(ModTags.Items.MACHINE)
+            .build()
             .register();
 
     public static final BlockEntry<CasingBlock> ZINC_CASING = REGISTRATE
