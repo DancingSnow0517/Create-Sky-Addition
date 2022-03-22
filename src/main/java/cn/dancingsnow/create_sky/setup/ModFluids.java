@@ -29,8 +29,8 @@ public class ModFluids {
             .properties(p -> p
                     .levelDecreasePerBlock(2)
                     .explosionResistance(100f)
-                    .tickRate(10)
-                    .slopeFindDistance(3))
+                    .tickRate(2)
+                    .slopeFindDistance(15))
             .attributes(a -> a
                     .sound(SoundEvents.WATER_AMBIENT)
                     .color(0xbfD6ECBC)
@@ -268,7 +268,7 @@ public class ModFluids {
             .properties(p -> p
                     .levelDecreasePerBlock(2)
                     .explosionResistance(100f)
-                    .tickRate(10)
+                    .tickRate(2)
                     .slopeFindDistance(3))
             .attributes(a -> a
                     .sound(SoundEvents.WATER_AMBIENT)
@@ -306,8 +306,8 @@ public class ModFluids {
                 .properties(p -> p
                         .levelDecreasePerBlock(2)
                         .explosionResistance(100f)
-                        .tickRate(10)
-                        .slopeFindDistance(3))
+                        .tickRate(2)
+                        .slopeFindDistance(15))
                 .attributes(a -> a
                         .sound(SoundEvents.WATER_AMBIENT)
                         .color(color)

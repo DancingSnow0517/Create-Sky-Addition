@@ -13,7 +13,6 @@ public enum AllLangPartials {
     ADVANCEMENTS("Advancements"),
     MESSAGES("UI & Messages"),
     TOOLTIPS("Item Descriptions"),
-    FLUIDS("Fluids"),
 
     ;
 
